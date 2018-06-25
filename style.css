@@ -1,0 +1,134 @@
+/**
+The A-Site
+**/
+
+body{
+	font-family: 'Quicksand', sans-serif;
+}
+
+h1{
+	text-align: center;
+	box-shadow: 5px 5px 0 0;
+	padding: 5px 5px;
+	outline: 2px solid;
+}
+
+.full_width{
+	width: 100%;
+}
+
+.section{
+	min-height: 40vh;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.browserFrame{
+	background-color: black;
+	min-height: 250px;
+	width: 320px;
+    border: 1px solid #ccc;
+    box-shadow: 4px 4px #ccc;
+}
+
+.titlebar{
+	background-color: white;
+	height: 28px;
+	width: 100%;
+}
+
+.titleDisplay{
+	display: inline-block;
+    background-color: #e6e6e6;
+    margin: 2% 0 0 2%;
+    padding: 1% 2%;
+    font-size: 16px;
+    border-radius: 6px 6px 0 0;
+    position: relative;
+    height: 23px;
+	border: 1px solid #c0c0c0;
+    border-bottom: none;
+}
+
+.titleDisplay::after{
+	content: " ";
+    height: 14px;
+    width: 20px;
+    background-color: rgba(0, 0, 0, 0.20);
+    position: absolute;
+    right: -22px;
+    bottom: 3px;
+    border-radius: 0 5px 0 0;
+}
+
+.titleDisplay>i{
+	font-size: 14px;
+	color: #343a40;
+}
+
+.titleDisplay>.fa-chrome{
+	color: #17a2b8;
+}
+
+.titlebar>i{
+	float: right;
+    height: 29px;
+    width: 29px;
+    padding: 7px;
+	border: 1px solid #c0c0c0;
+	margin-right: -1px;
+	color: #818182;
+}
+
+.addressbar>.fa-sync,
+.addressbar>.fa-ellipsis-v{
+	color: grey;
+}
+
+.titlebar>.fa-times{
+    background-color: lightcoral;
+    border: none;
+    border-left: 1px solid;
+    color: white;
+}
+
+.addressbar{
+	background-color: #e6e6e6;
+    height: 30px;
+    width: 100%;
+    padding: 2px 2%;
+}
+
+.addressbar>i{
+	font-size: 14px;
+    color: #ced4da;
+}
+
+.addressArea{
+	display: inline-flex;
+    font-size: 12px;
+    background-color: white;
+    width: 200px;
+    padding: 1% 2%;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+
+.contentArea{
+	background-color: white;
+	height: 200px;
+	width: 100%;
+	position: relative;
+	-moz-transform: scale(0.25);
+	-moz-transform-origin: 0 0;
+	-o-transform: scale(0.25);
+	-o-transform-origin: 0 0;
+	-webkit-transform: scale(0.25);
+	-webkit-transform-origin: 0 0;
+}
+
+.contentArea>iframe{
+	width: 1280px;
+	height: 800px;
+}
