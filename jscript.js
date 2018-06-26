@@ -14,7 +14,7 @@ $(document).ready(function(){
             		siteWraper.appendChild(siteDomain);
             		currentSites.appendChild(siteWraper);
             	});
-            	$("body").appendChild(currentSites);
+            	$("body").append(currentSites);
             });
         });
     });
