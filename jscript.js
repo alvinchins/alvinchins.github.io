@@ -5,7 +5,7 @@ $(document).ready(function(){
             $.each(works,function(work,project){
             	console.log(work);
             	console.log(project);
-            	console.log(projecy.name);
+            	console.log(project.name);
             });
         });
     });
