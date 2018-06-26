@@ -3,7 +3,7 @@ $(document).ready(function(){
         $.getJSON("data.js", function(works){
             $.each(works,function(work,projects){
             	var currentSites = document.createElement("div");
-            	currentSite.setAttribute("class","row");
+            	currentSites.setAttribute("class","row");
             	$.each(projects,function(i,project){
             		var siteWraper = document.createElement("div");
             		var siteTitle = document.createElement("h1");
