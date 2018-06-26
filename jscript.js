@@ -32,7 +32,6 @@ $(document).ready(function(){
 					'</div>'
             		].join("\n");
             		$("#mySites").append(template);
-            		$("#mySites").css("height","auto");
             	});
             });
         });
