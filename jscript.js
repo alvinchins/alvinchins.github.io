@@ -26,7 +26,7 @@ $(document).ready(function(){
 								'<i class="fas fa-ellipsis-v"></i>',
 							'</div>',
 							'<div class="contentArea">',
-								'<img src="./img/thumbnail/timberclub.JPG">',
+								'<img src="./img/thumbnail/'+project.name+'.JPG">',
 							'</div>',
 						'</div>',
 					'</div>'
