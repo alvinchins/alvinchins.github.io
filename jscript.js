@@ -3,7 +3,9 @@ $(document).ready(function(){
         $.getJSON("data.js", function(works){
         	console.log(works);
             $.each(works,function(work,project){
-            	alert(project.name + project.domain);
+            	console.log(work);
+            	console.log(project);
+            	console.log(projecy.name);
             });
         });
     });
