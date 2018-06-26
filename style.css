@@ -23,6 +23,15 @@ h1{
 	padding-bottom: 50px;
 }
 
+#mySites{
+	min-height: 100vh;
+}
+
+#mySites>div{
+	float: left;
+	padding: 2%;
+}
+
 .browserFrame{
 	background-color: black;
 	min-height: 250px;
