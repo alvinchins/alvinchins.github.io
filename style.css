@@ -23,9 +23,8 @@ h1{
 	padding-bottom: 50px;
 }
 
-#mySitesWrap{
-	position: relative;
-	overflow: hidden;
+#mySites{
+	min-height: 60vh;
 }
 
 #mySites>div{
