@@ -38,6 +38,7 @@ h1{
 	width: 320px;
     border: 1px solid #ccc;
     box-shadow: 4px 4px #ccc;
+    margin: 0 auto;
 }
 
 .titlebar{
