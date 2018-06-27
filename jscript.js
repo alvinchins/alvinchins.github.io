@@ -2,13 +2,17 @@ $(document).ready(function(){
     $.getJSON("data.js", function(works){
         $.each(works,function(work,projects){
         	$.each(projects,function(i,project){
+        		var projectTitle = project.name;
+        		if (projectTitle.length>=15) {
+        			projectTitle = projectTitle.substring(0, 15)+"...";
+        		}
         		var template = [
 				'<div class="col-md-4">',
 					'<div class="browserFrame">',
 						'<div class="titlebar">',
 							'<h4 class="titleDisplay">',
 							'<i class="fab fa-chrome">',
-							'</i>&nbsp;'+project.name+'&nbsp;',
+							'</i>&nbsp;'+projectTitle+'&nbsp;',
 							'<i class="fas fa-times"></i>',
 							'</h4>',
 							'<i class="fas fa-times"></i>',
