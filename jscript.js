@@ -32,6 +32,9 @@ $(document).ready(function(){
 					'</div>'
             		].join("\n");
             		$("#mySites").append(template);
+            		$("#mySitesWrap").css({
+            			height:$("#mySites").height()
+            		});
             	});
             });
         });
