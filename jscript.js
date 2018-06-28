@@ -4,9 +4,11 @@ $(document).ready(function(){
 	function checkWidth(){
 		console.log($(window).width());
 		var holderHeight = 0;
-		if ($(window).width() >= 768) {
+		if ($(window).width() >= 992) {
 			holderHeight = 316 * (Math.ceil(numOfSites/3));
 			console.log(">=768 numOfSites:"+ numOfSites);
+		}else if( 768 <= $(window).width() <= 991){
+			holderHeight = 316 * (Math.ceil(numOfSites/2));
 		}else{
 			holderHeight = 316 * numOfSites;
 			console.log("<768 numOfSites:"+ numOfSites);
