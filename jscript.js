@@ -3,7 +3,7 @@ $(document).ready(function(){
         $.each(works,function(work,projects){
         	var counter = 0;
         	$.each(projects,function(i,project){
-        		if (counter = 3) {
+        		if (counter == 3) {
         			$("#mySites").height("+=320");
         			counter = 0;
         			console.log($("#mySites").height());
