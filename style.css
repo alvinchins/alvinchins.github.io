@@ -23,6 +23,15 @@ h1{
 	padding-bottom: 50px;
 }
 
+.banner>.container{
+	height: 200px;
+	display: flex;
+}
+
+.bannerText{
+	margin: auto;
+}
+
 #mySites{
 	min-height: 60vh;
 }
