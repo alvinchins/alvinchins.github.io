@@ -5,6 +5,7 @@ $(document).ready(function(){
 		if ($(window).width() < 768) {
 			reso = 1;
 		}
+		console.log("resize");
 	}
 
 	checkWidth();
