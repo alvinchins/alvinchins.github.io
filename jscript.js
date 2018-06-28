@@ -15,7 +15,7 @@ $(document).ready(function(){
         	var counter = 0;
         	$.each(projects,function(i,project){
         		if (counter == reso) {
-        			$("#mySites").height("+=320");
+        			$("#mySites").height("+=300");
         			counter = 0;
         			console.log($("#mySites").height());
         			console.log(counter);
