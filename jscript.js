@@ -1,9 +1,20 @@
 $(document).ready(function(){
+	var reso = 3;
+
+	function checkWidth(){
+		if ($(window).width() < 768) {
+			reso = 1;
+		}
+	}
+
+	checkWidth();
+	$(window).resize(checkWidth);
+
     $.getJSON("data.js", function(works){
         $.each(works,function(work,projects){
         	var counter = 0;
         	$.each(projects,function(i,project){
-        		if (counter == 3) {
+        		if (counter == reso) {
         			$("#mySites").height("+=320");
         			counter = 0;
         			console.log($("#mySites").height());
