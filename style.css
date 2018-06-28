@@ -113,7 +113,6 @@ h1{
 .titlebar>.fa-times{
     background-color: lightcoral;
     border: none;
-    border-left: 1px solid;
     color: white;
     padding-left: 9px;
 }
