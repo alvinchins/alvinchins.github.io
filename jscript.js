@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	var numOfSites = 0;
-
     $.getJSON("data.js", function(works){
         $.each(works,function(work,projects){
         	$.each(projects,function(i,project){
@@ -40,6 +39,7 @@ $(document).ready(function(){
         		$("#mySites").append(template);
         	});
         });
+        checkWidth();
     });
 
     function checkWidth(){
