@@ -33,7 +33,7 @@ h1{
 }
 
 #mySites{
-	min-height: 60vh;
+	height: 320px;
 }
 
 #mySites>div{

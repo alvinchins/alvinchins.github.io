@@ -3,6 +3,10 @@ $(document).ready(function(){
         $.each(works,function(work,projects){
         	var counter = 0;
         	$.each(projects,function(i,project){
+        		if (counter == 3) {
+        			$("#mySites").height("+=320");
+        			counter = 0;
+        		}
         		counter = counter++;
         		var projectTitle = project.name;
         		if (projectTitle.length>=15) {
@@ -37,12 +41,6 @@ $(document).ready(function(){
 				'</div>'
         		].join("\n");
         		$("#mySites").append(template);
-        		if (counter == 3) {
-        			$("#mySites").css({
-        			height:$("#mySites").height()+320
-        			});
-        			counter = 0;
-        		}
         	});
         });
     });
