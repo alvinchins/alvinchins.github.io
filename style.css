@@ -45,6 +45,8 @@ h1{
 #mySites>div{
 	float: left;
 	padding: 2%;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .browserFrame{

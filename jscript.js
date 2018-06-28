@@ -1,11 +1,15 @@
 $(document).ready(function(){
-	var reso = 3;
+	var numOfSites = 0;
 
 	function checkWidth(){
+		var holderHeight = 0;
 		if ($(window).width() < 768) {
-			reso = 1;
+			holderHeight = 316 * numOfSites;
+		}else{
+			holderHeight = 316 * (Math.ceil(numOfSites/3));
 		}
-		console.log("resize");
+		$("#mySites").height(holderHeight);
+		console.log(holderHeight);
 	}
 
 	checkWidth();
@@ -15,13 +19,6 @@ $(document).ready(function(){
         $.each(works,function(work,projects){
         	var counter = 0;
         	$.each(projects,function(i,project){
-        		if (counter == reso) {
-        			$("#mySites").height("+=300");
-        			counter = 0;
-        			console.log($("#mySites").height());
-        			console.log(counter);
-        		}
-        		counter++;
         		var projectTitle = project.name;
         		if (projectTitle.length>=15) {
         			projectTitle = projectTitle.substring(0, 15)+"...";
