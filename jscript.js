@@ -6,6 +6,8 @@ $(document).ready(function(){
         		if (counter == 3) {
         			$("#mySites").height("+=320");
         			counter = 0;
+        			console.log($("#mySites").height());
+        			console.log(counter);
         		}
         		counter = counter++;
         		var projectTitle = project.name;
