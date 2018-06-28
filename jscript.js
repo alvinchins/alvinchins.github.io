@@ -1,5 +1,19 @@
 $(document).ready(function(){
 	var numOfSites = 0;
+
+	function checkWidth(){
+		var holderHeight = 0;
+		if ($(window).width() >= 768) {
+			holderHeight = 316 * (Math.ceil(numOfSites/3));
+			console.log(">=768 numOfSites:"+ numOfSites);
+		}else{
+			holderHeight = 316 * numOfSites;
+			console.log("<768 numOfSites:"+ numOfSites);
+		}
+		$("#mySites").height(holderHeight);
+		console.log(holderHeight);
+	}
+
     $.getJSON("data.js", function(works){
         $.each(works,function(work,projects){
         	$.each(projects,function(i,project){
@@ -42,18 +56,5 @@ $(document).ready(function(){
         checkWidth();
     });
 
-    function checkWidth(){
-		var holderHeight = 0;
-		if ($(window).width() >= 768) {
-			holderHeight = 316 * (Math.ceil(numOfSites/3));
-			console.log("numOfSites:"+numOfSites);
-		}else{
-			holderHeight = 316 * numOfSites;
-		}
-		$("#mySites").height(holderHeight);
-		console.log(holderHeight);
-	}
-
-	checkWidth();
 	$(window).resize(checkWidth);
 });
