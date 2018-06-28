@@ -3,7 +3,6 @@ $(document).ready(function(){
 
     $.getJSON("data.js", function(works){
         $.each(works,function(work,projects){
-        	var counter = 0;
         	$.each(projects,function(i,project){
         		var projectTitle = project.name;
         		if (projectTitle.length>=15) {
@@ -45,10 +44,10 @@ $(document).ready(function(){
 
     function checkWidth(){
 		var holderHeight = 0;
-		if ($(window).width() =< 768) {
-			holderHeight = 316 * numOfSites;
-		}else{
+		if ($(window).width() >= 768) {
 			holderHeight = 316 * (Math.ceil(numOfSites/3));
+		}else{
+			holderHeight = 316 * numOfSites;
 		}
 		$("#mySites").height(holderHeight);
 		console.log(holderHeight);
