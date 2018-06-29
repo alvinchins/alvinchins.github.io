@@ -4,7 +4,7 @@ $(document).ready(function(){
 	function checkWidth(){
 		var holderHeight = 0;
 		holderHeight = 316 * (Math.ceil(numOfSites/Math.round($("#mySites").width()/$("#mySites:first").width())));
-		console.log("height:"+holderHeight+"=>316*("+numOfSites+"/("+$("#mySites").width()+"/"+("#mySites:first").width()+")");
+		console.log("height:"+holderHeight+"=>316*("+numOfSites+"/("+$("#mySites").width()+"/"+$("#mySites:first").width()+")");
 		$("#mySites").height(holderHeight);
 	}
 
