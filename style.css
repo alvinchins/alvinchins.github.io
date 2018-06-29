@@ -18,7 +18,7 @@ h1{
 }
 
 .section{
-	min-height: 40vh;
+	min-height: 200px;
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
