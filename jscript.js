@@ -7,7 +7,7 @@ $(document).ready(function(){
 			holderHeight = 316 * (Math.ceil(numOfSites/3));
 		}else if( 768 <= $(window).width() <= 991){
 			holderHeight = 316 * (Math.ceil(numOfSites/2));
-		}else{
+		}else if ($(window).width() <= 767) {}{
 			holderHeight = 316 * numOfSites;
 		}
 		$("#mySites").height(holderHeight);
