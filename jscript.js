@@ -52,13 +52,13 @@ $(document).ready(function(){
 	$(window).resize(checkWidth);
 
 	window.onscroll = function(){stickCheck()};
-	var menuBar = document.getElementByClass("header");
-	var sticky = menuBar.offsetTop;
+	var menuBar = document.getElementByClassName("header");
+	var sticky = menuBar[0].offsetTop;
 	function stickCheck(){
 		if (window.pageYOffset >= sticky) {
-			menuBar.classList.add("sticky");
+			menuBar[0].classList.add("sticky");
 		}else{
-			menuBar.classList.remove("sticky");
+			menuBar[0].classList.remove("sticky");
 		}
 	}
 });
