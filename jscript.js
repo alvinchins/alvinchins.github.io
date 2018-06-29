@@ -3,13 +3,7 @@ $(document).ready(function(){
 
 	function checkWidth(){
 		var holderHeight = 0;
-		if ($(window).innerWidth() >= 1200) {
-			holderHeight = 316 * (Math.ceil(numOfSites/3));
-		}else if($(window).innerWidth() <= 767){
-			holderHeight = 316 * numOfSites;
-		}else{
-			holderHeight = 316 * (Math.ceil(numOfSites/2));
-		}
+		holderHeight = 316 * Math.round($("#mySites").width()/$("#mySites:first").width());
 		$("#mySites").height(holderHeight);
 	}
 
