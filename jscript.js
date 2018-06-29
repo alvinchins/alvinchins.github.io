@@ -50,4 +50,15 @@ $(document).ready(function(){
     });
 
 	$(window).resize(checkWidth);
+
+	window.onscroll = function(){stickCheck()};
+	var menuBar = document.getElementByClass("header");
+	var sticky = menuBar.offsetTop;
+	function stickCheck(){
+		if (window.pageYOffset >= sticky) {
+			menuBar.classList.add("sticky");
+		}else{
+			menuBar.classList.remove("sticky");
+		}
+	}
 });
