@@ -3,12 +3,12 @@ $(document).ready(function(){
 
 	function checkWidth(){
 		var holderHeight = 0;
-		if ($(window).width() >= 992) {
+		if ($(window).width() >= 1200) {
 			holderHeight = 316 * (Math.ceil(numOfSites/3));
-		}else if( 768 <= $(window).width() <= 991){
-			holderHeight = 316 * (Math.ceil(numOfSites/2));
-		}else if ($(window).width() <= 767) {}{
+		}else if($(window).width() <= 767){
 			holderHeight = 316 * numOfSites;
+		}else{
+			holderHeight = 316 * (Math.ceil(numOfSites/2));
 		}
 		$("#mySites").height(holderHeight);
 	}
