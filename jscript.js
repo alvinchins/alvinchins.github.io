@@ -52,7 +52,7 @@ $(document).ready(function(){
 	$(window).resize(checkWidth);
 
 	window.onscroll = function(){stickCheck()};
-	var menuBar = document.getElementByClassName("header");
+	var menuBar = document.getElementsByClassName("header");
 	var sticky = menuBar[0].offsetTop;
 	function stickCheck(){
 		if (window.pageYOffset >= sticky) {
