@@ -3,8 +3,8 @@ $(document).ready(function(){
 
 	function checkWidth(){
 		var holderHeight = 0;
-		holderHeight = 316 * (Math.ceil(numOfSites/Math.round($("#mySites").width()/$("#mySites:nth-child(1)").width())));
-		console.log("height:"+holderHeight+"=>316*("+numOfSites+"/("+$("#mySites").width()+"/"+$("#mySites:nth-child(1)").width()+")");
+		holderHeight = 316 * (Math.ceil(numOfSites/Math.round($("#mySites").width()/$("#mySites").children(0).width())));
+		console.log("height:"+holderHeight+"=>316*("+numOfSites+"/("+$("#mySites").width()+"/"+$("#mySites").children(0).width()+")");
 		$("#mySites").height(holderHeight);
 	}
 
