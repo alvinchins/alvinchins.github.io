@@ -163,7 +163,7 @@ h1{
 	width: 100%;
 }
 
-.contentArea>.itemframe>.item>img{
+.contentArea>img{
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
