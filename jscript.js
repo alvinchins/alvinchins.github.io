@@ -12,16 +12,31 @@ $(document).ready(function(){
         	$.each(projects,function(i,project){
         		var projectName = project.name;
         		var projectDomain = project.domain;
-        		var projectWp = project.wp;
-        		var projectEc = project.ec;
-        		var projectCt = project.ct;
-        		var projectTt = project.tt;
-        		var projectNsfw = project.nsfw;
+        		var projectWp = "";
+        		var projectEc = "";
+        		var projectCt = "";
+        		var projectTt = "";
+        		var projectNsfw = "";
         		if (projectName&&projectDomain) {
 					if (projectName.length>=15) {
 						projectName = projectName.substring(0, 15)+"...";
 					}
 					numOfSites++;
+					if (project.wp) {
+						projectWp = '<span title="WordPress" class="b_wp"><p>WORDPRESS</p></span>';
+					}
+					if (project.ec) {
+						projectEc = '<span title="E-Commerce" class="b_ec"><p>E-COMMERCE</p></span>';
+					}
+					if (project.ct) {
+						projectCt = '<span title="Custom Theme" class="b_ct"><p>CUSTOM THEME</p></span>';
+					}
+					if (project.tt) {
+						projectTt = '<span title="Theme Template" class="b_tt"><p>THEME TEMPLATE</p></span>';
+					}
+					if (project.nsfw) {
+						projectNsfw = '<span title="Not Safe For Work" class="b_nsfw"><p>NOT SAFE FOR WORK</p></span>';
+					}
 					var template = [
 					'<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">',
 						'<div class="browserFrame">',
@@ -45,7 +60,20 @@ $(document).ready(function(){
 								'<i class="fas fa-ellipsis-v"></i>',
 							'</div>',
 							'<div class="contentArea">',
-								'<img src="./img/thumbnail/'+project.name+'.JPG">',
+								'<div class="itemframe">',
+									'<div class="overlay">',
+										'<div class="badges">',
+											projectWp,
+											projectEc,
+											projectCt,
+											projectTt,
+											projectNsfw,
+										'</div>',
+									'</div>',
+									'<div class="item">',
+										'<img src="./img/thumbnail/'+project.name+'.JPG">',
+									'</div>',
+								'</div>',
 							'</div>',
 						'</div>',
 					'</div>'
