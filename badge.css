@@ -38,12 +38,11 @@ CSS Structure...
 }
 
 .itemframe>.overlay>.badges>span{
-	position: relative;
+    position: relative;
     color: white;
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    padding: 5px;
+    width: 26px;
+    height: 26px;
     margin-right: -10px;
     font-size: 16px;
     border-radius: 5px 5px 0 0;
@@ -51,20 +50,20 @@ CSS Structure...
 
 .itemframe>.overlay>.badges>span>p{
     position: absolute;
-	font-family: 'Roboto Mono', monospace;
-	font-weight: 300;
-	white-space: nowrap;
-    padding: 8px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    white-space: nowrap;
+    padding: 10px 8px;
     margin: auto;
     border-radius: 5px 5px 0 0;
     bottom: 0;
-    right: 0;
-    max-width: 10px;
-    height: 10px;
-    line-height: 10px;
+    right: 0px;
+    max-width: 26px;
+    height: 26px;
+    line-height: 7px;
     overflow: hidden;
     visibility: hidden;
-	transition: 1s;
+    transition: 1s;
 }
 
 .itemframe>.overlay>.badges>span>p::first-letter{
