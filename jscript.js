@@ -38,7 +38,7 @@ $(document).ready(function(){
 						projectNsfw = '<span title="Not Safe For Work" class="b_nsfw"><p>NOT SAFE FOR WORK</p></span>';
 					}
 					var template = [
-					'<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">',
+					'<div class="col-md-6 col-lg-6 col-xl-4">',
 						'<div class="browserFrame">',
 							'<div class="titlebar">',
 								'<h4 class="titleDisplay">',
