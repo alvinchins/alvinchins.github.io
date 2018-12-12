@@ -56,6 +56,14 @@
 		"ct":true,
 		"tt":false,
 		"nsfw":false
+	},{
+		"name":"test",
+		"domain":"",
+		"wp":true,
+		"ec":false,
+		"ct":true,
+		"tt":false,
+		"nsfw":false
 	}
 	]
 }
