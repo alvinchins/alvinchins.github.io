@@ -1,0 +1,99 @@
+/*
+CSS Structure...
+<itemframe>
+	<overlay>
+		<badges>
+			<span>
+				<p></p>
+			</span>
+			<span>
+				<p></p>
+			</span>
+			<span>
+				<p></p>
+			</span>
+			...
+		</badges>
+	</overlay>
+</itemframe>
+*/
+
+.overlay{
+	overflow: hidden;
+}
+
+.itemframe>.overlay>.badges{
+	position: absolute;
+    bottom: 0;
+    right: 5px;
+    height: 26px;
+}
+
+.itemframe>.overlay>.badges>span{
+	position: relative;
+    color: white;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    padding: 5px;
+    margin-right: -10px;
+    font-size: 16px;
+    border-radius: 5px 5px 0 0;
+}
+
+.itemframe>.overlay>.badges>span>p{
+    position: absolute;
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 300;
+	white-space: nowrap;
+    padding: 8px;
+    margin: auto;
+    border-radius: 5px 5px 0 0;
+    bottom: 0;
+    right: 0;
+    max-width: 10px;
+    height: 10px;
+    line-height: 10px;
+    overflow: hidden;
+    visibility: hidden;
+	transition: 1s;
+}
+
+.itemframe>.overlay>.badges>span>p::first-letter{
+    visibility: visible;
+}
+
+.itemframe>.overlay>.badges>span>p:hover{
+	border-radius: 5px;
+	visibility: visible;
+	filter: brightness(1.2);
+	max-width: 180px;
+}
+
+.b_wp,.b_wp>p{
+	background-image: linear-gradient(-90deg, #0D47A1, #2196F3);
+}
+
+.b_ct,.b_ct>p{
+	background-image: linear-gradient(-90deg, #E65100, #FF9800);
+}
+
+.b_ec,.b_ec>p{
+	background-image: linear-gradient(-90deg, #1B5E20, #4CAF50);
+}
+
+.b_tt,.b_tt>p{
+	background-image: linear-gradient(-90deg, #4A148C, #9C27B0);
+}
+
+.b_nsfw,.b_nsfw>p{
+    background: linear-gradient(90deg, #B71C1C, #F44336, #B71C1C);
+    background-size: 280% 280%;
+    animation: nsfw 3s ease infinite;
+}
+
+@keyframes nsfw {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}

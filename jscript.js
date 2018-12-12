@@ -14,6 +14,9 @@ $(document).ready(function(){
         		if (projectTitle.length>=15) {
         			projectTitle = projectTitle.substring(0, 15)+"...";
         		}
+        		if (project.wp) {
+        			console.log('['+project.name+']');
+        		}
         		numOfSites++;
         		var template = [
 				'<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">',

@@ -3,52 +3,59 @@
 	{
 		"name":"Timberclub",
 		"domain":"timberclubaustralia.com.au",
-		"wp":"1",
-		"eco":"0",
-		"tmp":"0",
-		"nsfw":"0"
+		"wp":true,
+		"ec":false,
+		"ct":true,
+		"tt":false,
+		"nsfw":false
 	},{
 		"name":"THN Partners",
 		"domain":"thnpartners.com.au",
-		"wp":"1",
-		"eco":"0",
-		"tmp":"0",
-		"nsfw":"0"
+		"wp":true,
+		"ec":false,
+		"ct":true,
+		"tt":false,
+		"nsfw":false
 	},{
 		"name":"Sydney Garden Lodge",
 		"domain":"sydgardenlodge.com.au",
-		"wp":"1",
-		"eco":"0",
-		"tmp":"0",
-		"nsfw":"0"
+		"wp":true,
+		"ec":false,
+		"ct":true,
+		"tt":false,
+		"nsfw":false
 	},{
 		"name":"Jessie Coffee School",
 		"domain":"jessiecoffee.com.au",
-		"wp":"1",
-		"eco":"1",
-		"tmp":"1",
-		"nsfw":"0"
+		"wp":true,
+		"ec":true,
+		"ct":true,
+		"tt":true,
+		"nsfw":false
 	},{
 		"name":"South Pacific Resort Hotel",
 		"domain":"southpacresort.com.au",
-		"wp":"1",
-		"eco":"0",
-		"tmp":"1",
-		"nsfw":"0"
+		"wp":true,
+		"ec":false,
+		"ct":true,
+		"tt":true,
+		"nsfw":false
 	},{
 		"name":"Asian Butterfly Massage",
 		"domain":"asianbutterflymassage.com.au",
-		"wp":"1",
-		"eco":"0",
-		"tmp":"0",
-		"nsfw":"1"
+		"wp":true,
+		"ec":false,
+		"ct":true,
+		"tt":false,
+		"nsfw":true
 	},{
 		"name":"National Car Rental",
 		"domain":"nationalcarrentals.com.au",
-		"wp":"1",
-		"eco":"0",
-		"tmp":"0",
-		"nsfw":"0"
+		"wp":true,
+		"ec":false,
+		"ct":true,
+		"tt":false,
+		"nsfw":false
 	}
 	]
 }
