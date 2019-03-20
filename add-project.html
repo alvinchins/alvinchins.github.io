@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add New Project</title>
+</head>
+<body>
+<div>
+	<form action="javascript:saveToFirebase()">
+		<input type="text" name="name" placeholder="name"><br>
+		<input type="text" name="domain" placeholder="domain"><br>
+		<input type="checkbox" name="wordpress" value="true">WordPress<br>
+		<input type="checkbox" name="e_commerce" value="true">eCommerce<br>
+		<input type="checkbox" name="custom_theme" value="true">Custom Theme<br>
+		<input type="checkbox" name="theme_template" value="true">Theme Template<br>
+		<input type="checkbox" name="nsfw" value="true">NSFW<br>
+		<button type="submit">Add</button>
+	</form>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyCSvAscqBNtw_IEldARLU9VhcohcWdIfrY",
+		authDomain: "mygithubpage-15b65.firebaseapp.com",
+		databaseURL: "https://mygithubpage-15b65.firebaseio.com",
+		projectId: "mygithubpage-15b65",
+		storageBucket: "mygithubpage-15b65.appspot.com",
+		messagingSenderId: "228419205198"
+	};
+	firebase.initializeApp(config);
+
+	function saveToFirebase() {
+
+		var name = document.getElementsByName('name')[0].value;
+		var domain = document.getElementsByName('domain')[0].value;
+
+		if (name==null||name.trim()=='',domain==null||domain.trim()=='') {
+			alert('Name and Domain need to be filled!');
+			return;
+		}
+
+		var wordpress = false;
+		var e_commerce = false;
+		var custom_theme = false;
+		var theme_template = false;
+		var nsfw = false;
+
+		if (document.getElementsByName('wordpress')[0].checked) {
+			wordpress = true;
+		}
+		if (document.getElementsByName('e_commerce')[0].checked) {
+			e_commerce = true;
+		}
+		if (document.getElementsByName('custom_theme')[0].checked) {
+			custom_theme = true;
+		}
+		if (document.getElementsByName('theme_template')[0].checked) {
+			theme_template = true;
+		}
+		if (document.getElementsByName('nsfw')[0].checked) {
+			nsfw = true;
+		}
+
+		var siteObject = {
+			name: name,
+			domain: domain,
+			wordpress: wordpress,
+			e_commerce: e_commerce,
+			custom_theme: custom_theme,
+			theme_template: theme_template,
+			nsfw: nsfw
+		};
+		console.log(siteObject);
+		firebase.database().ref('development-projects').push().set(siteObject)
+		.then(function(snapshot) {
+		    alert('Success!'); // some success method
+		}, function(error) {
+		    console.log('error' + error);
+		    alert('Failed!'); // some error method
+		});
+	}
+</script>
+</body>
+</html>
