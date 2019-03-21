@@ -13,8 +13,11 @@
 		<input type="checkbox" name="custom_theme" value="true">Custom Theme<br>
 		<input type="checkbox" name="theme_template" value="true">Theme Template<br>
 		<input type="checkbox" name="nsfw" value="true">NSFW<br>
+		<input type="file" id="file" name="file"/><br>
 		<button type="submit">Add</button>
 	</form>
+	<br><br>
+	<h4 id='state'>State</h4>
 </div>
 
 
@@ -22,17 +25,21 @@
 <script>
 	// Initialize Firebase
 	var config = {
-		apiKey: "AIzaSyCSvAscqBNtw_IEldARLU9VhcohcWdIfrY",
-		authDomain: "mygithubpage-15b65.firebaseapp.com",
-		databaseURL: "https://mygithubpage-15b65.firebaseio.com",
-		projectId: "mygithubpage-15b65",
-		storageBucket: "mygithubpage-15b65.appspot.com",
-		messagingSenderId: "228419205198"
+		apiKey: "AIzaSyBklqTig7EvHI_2EzkKUEw98rPQGWv_yBk",
+		authDomain: "first-pwa-273af.firebaseapp.com",
+		databaseURL: "https://first-pwa-273af.firebaseio.com",
+		projectId: "first-pwa-273af",
+		storageBucket: "first-pwa-273af.appspot.com",
+		messagingSenderId: "488178950132"
 	};
 	firebase.initializeApp(config);
+	const firestore = firebase.firestore();
+	const settings = {timestampsInSnapshots: true};
+	firestore.settings(settings);
 
 	function saveToFirebase() {
-
+		document.getElementById("state").innerHTML = "Starting...";
+		// Validate inputs
 		var name = document.getElementsByName('name')[0].value;
 		var domain = document.getElementsByName('domain')[0].value;
 
@@ -63,22 +70,99 @@
 			nsfw = true;
 		}
 
-		var siteObject = {
-			name: name,
-			domain: domain,
-			wordpress: wordpress,
-			e_commerce: e_commerce,
-			custom_theme: custom_theme,
-			theme_template: theme_template,
-			nsfw: nsfw
+		var site_info = {
+			['name']:name,
+			['domain']:domain,
+			['wordpress']:wordpress,
+			['e_commerce']:e_commerce,
+			['custom_theme']:custom_theme,
+			['theme_template']:theme_template,
+			['nsfw']:nsfw
 		};
-		console.log(siteObject);
-		firebase.database().ref('development-projects').push().set(siteObject)
-		.then(function(snapshot) {
-		    alert('Success!'); // some success method
-		}, function(error) {
-		    console.log('error' + error);
-		    alert('Failed!'); // some error method
+
+		console.log(site_info);
+
+		uploadImg(site_info);
+
+	}
+
+	function uploadImg(site_info) {
+		// Setup firebase storage
+		var storage = firebase.storage();
+		var files = document.getElementById('file').files;
+		var file = files[0];
+		console.log(file.name);
+		// Create the file metadata
+		var metadata = {
+		  contentType: 'image/jpeg'
+		};
+
+		// Upload file and metadata to the object 'images/filename.jpg'
+		var uploadTask = storage.ref().child('img/thumbnail/' + file.name).put(file, metadata);
+
+		// Listen for state changes, errors, and completion of the upload.
+		uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+		  function(snapshot) {
+		    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+		    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+		    console.log('Upload is ' + progress + '% done');
+		    document.getElementById("state").innerHTML = 'Upload is ' + progress + '% done';
+		    switch (snapshot.state) {
+		      case firebase.storage.TaskState.PAUSED: // or 'paused'
+		        console.log('Upload is paused');
+		        break;
+		      case firebase.storage.TaskState.RUNNING: // or 'running'
+		        console.log('Upload is running');
+		        break;
+		    }
+		  }, function(error) {
+
+		  // A full list of error codes is available at
+		  // https://firebase.google.com/docs/storage/web/handle-errors
+		  switch (error.code) {
+		    case 'storage/unauthorized':
+		      // User doesn't have permission to access the object
+		      break;
+
+		    case 'storage/canceled':
+		      // User canceled the upload
+		      break;
+
+		    case 'storage/unknown':
+		      // Unknown error occurred, inspect error.serverResponse
+		      break;
+		  }
+		}, function() {
+		  // Upload completed successfully, now we can get the download URL
+		  uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+		    console.log('File available at', downloadURL);
+		    site_info['thumbnail_url'] = downloadURL;
+		    document.getElementById("state").innerHTML = 'Upload Complete, updating db...';
+		    updateDb(site_info);
+		  });
+		});
+	}
+
+	function updateDb(site_info) {
+		// Setup firebase db
+		var db = firebase.firestore();
+		// Add a new document in collection
+		db.collection("sites").doc().set({
+		    name: site_info.name,
+		    domain: site_info.domain,
+		    wordpress: site_info.wordpress,
+		    e_commerce: site_info.e_commerce,
+		    custom_theme: site_info.custom_theme,
+		    theme_template: site_info.theme_template,
+		    nsfw: site_info.nsfw,
+		    thumbnail_url: site_info.thumbnail_url
+		})
+		.then(function() {
+		    console.log("Document successfully written!");
+		    document.getElementById("state").innerHTML = 'Job Done!';
+		})
+		.catch(function(error) {
+		    console.error("Error writing document: ", error);
 		});
 	}
 </script>

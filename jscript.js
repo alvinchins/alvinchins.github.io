@@ -7,79 +7,89 @@ $(document).ready(function(){
 		$("#mySites").height(holderHeight);
 	}
 
-    $.getJSON("data.js", function(works){
-        $.each(works,function(work,projects){
-        	$.each(projects,function(i,project){
-        		var projectName = project.name;
-        		var projectDomain = project.domain;
-        		var projectWp = "";
-        		var projectEc = "";
-        		var projectCt = "";
-        		var projectTt = "";
-        		var projectNsfw = "";
-        		if (projectName&&projectDomain) {
-					if (projectName.length>=15) {
-						projectName = projectName.substring(0, 15)+"...";
-					}
-					numOfSites++;
-					if (project.wp) {
-						projectWp = '<span title="WordPress" class="b_wp"><p>WORDPRESS</p></span>';
-					}
-					if (project.ec) {
-						projectEc = '<span title="E-Commerce" class="b_ec"><p>E-COMMERCE</p></span>';
-					}
-					if (project.ct) {
-						projectCt = '<span title="Custom Theme" class="b_ct"><p>CUSTOM THEME</p></span>';
-					}
-					if (project.tt) {
-						projectTt = '<span title="Theme Template" class="b_tt"><p>THEME TEMPLATE</p></span>';
-					}
-					if (project.nsfw) {
-						projectNsfw = '<span title="Not Safe For Work" class="b_nsfw"><p>NOT SAFE FOR WORK</p></span>';
-					}
-					var template = [
-					'<div class="col-md-6 col-lg-6 col-xl-4">',
-						'<div class="browserFrame">',
-							'<div class="titlebar">',
-								'<h4 class="titleDisplay">',
-								'<i class="fab fa-chrome">',
-								'</i>&nbsp;'+projectName+'&nbsp;',
-								'<i class="fas fa-times"></i>',
-								'</h4>',
-								'<i class="fas fa-times"></i>',
-								'<i class="far fa-square"></i>',
-								'<i class="fas fa-minus"></i>',
-							'</div>',
-							'<div class="addressbar">',
-								'<i class="fas fa-arrow-left"></i>&nbsp;',
-								'<i class="fas fa-arrow-right"></i>&nbsp;',
-								'<i class="fas fa-sync"></i>&nbsp;',
-								'<h5 class="addressArea">',
-								'http://'+projectDomain+'/',
-								'</h5>&nbsp;&nbsp;',
-								'<i class="fas fa-ellipsis-v"></i>',
-							'</div>',
-							'<div class="contentArea itemframe">',
-								'<div class="overlay">',
-									'<div class="badges">',
-										projectWp,
-										projectEc,
-										projectCt,
-										projectTt,
-										projectNsfw,
-									'</div>',
-								'</div>',
-								'<img src="./img/thumbnail/'+project.name+'.JPG">',
-							'</div>',
+	// Setup firebase db
+	var db = firebase.firestore();
+	db.collection("sites").get().then(function(querySnapshot){
+		querySnapshot.forEach(function(site){
+			var doc = site.data();
+			var projectName = doc.name;
+			var projectDomain = doc.domain;
+			var projectWp = "";
+			var projectEc = "";
+			var projectCt = "";
+			var projectTt = "";
+			var projectNsfw = "";
+			if (projectName&&projectDomain) {
+				if (projectName.length>=15) {
+					projectName = projectName.substring(0, 15)+"...";
+				}
+				numOfSites++;
+				if (doc.wordpress) {
+					projectWp = '<span title="WordPress" class="b_wp"><p>WORDPRESS</p></span>';
+				}
+				if (doc.e_commerce) {
+					projectEc = '<span title="E-Commerce" class="b_ec"><p>E-COMMERCE</p></span>';
+				}
+				if (doc.custom_theme) {
+					projectCt = '<span title="Custom Theme" class="b_ct"><p>CUSTOM THEME</p></span>';
+				}
+				if (doc.theme_template) {
+					projectTt = '<span title="Theme Template" class="b_tt"><p>THEME TEMPLATE</p></span>';
+				}
+				if (doc.nsfw) {
+					projectNsfw = '<span title="Not Safe For Work" class="b_nsfw"><p>NOT SAFE FOR WORK</p></span>';
+				}
+				var template = [
+				'<div class="col-12 col-md-6 col-lg-4">',
+					'<div class="browserFrame">',
+						'<div class="titlebar">',
+							'<h4 class="titleDisplay">',
+							'<i class="fab fa-chrome">',
+							'</i>&nbsp;'+projectName+'&nbsp;',
+							'<i class="fas fa-times"></i>',
+							'</h4>',
+							'<i class="fas fa-times"></i>',
+							'<i class="far fa-square"></i>',
+							'<i class="fas fa-minus"></i>',
 						'</div>',
-					'</div>'
-					].join("\n");
-					$("#mySites").append(template);
-        		}
-        	});
-        });
-        checkWidth();
-    });
+						'<div class="addressbar">',
+							'<i class="fas fa-arrow-left"></i>&nbsp;',
+							'<i class="fas fa-arrow-right"></i>&nbsp;',
+							'<i class="fas fa-sync"></i>&nbsp;',
+							'<h5 class="addressArea">',
+							'http://'+projectDomain+'/',
+							'</h5>&nbsp;&nbsp;',
+							'<i class="fas fa-ellipsis-v"></i>',
+						'</div>',
+						'<div class="contentArea itemframe">',
+							'<div class="overlay">',
+								'<div class="badges">',
+									projectWp,
+									projectEc,
+									projectCt,
+									projectTt,
+									projectNsfw,
+								'</div>',
+							'</div>',
+							'<img src='+doc.thumbnail_url+'>',
+						'</div>',
+					'</div>',
+				'</div>'
+				].join("\n");
+				$("#mySites").append(template);
+			}
+		});
+		checkWidth();
+	});
+
+//    $.getJSON("data.js", function(works){
+//        $.each(works,function(work,projects){
+//        	$.each(projects,function(i,project){
+//
+//       	});
+//        });
+//        checkWidth();
+//    });
 
 	$(window).resize(checkWidth);
 

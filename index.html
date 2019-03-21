@@ -28,7 +28,9 @@
 	<div class="content full_width">
 		<div class="section full_width">
 			<div class="blankRow"></div>
-			<div id="mySites" class="container"></div>
+			<div class="container">
+				<div id="mySites" class="row"></div>
+			</div>
 			<div class="blankRow"></div>
 		</div>
 	</div>
@@ -40,14 +42,17 @@
 	<script>
 		// Initialize Firebase
 		var config = {
-		apiKey: "AIzaSyCSvAscqBNtw_IEldARLU9VhcohcWdIfrY",
-		authDomain: "mygithubpage-15b65.firebaseapp.com",
-		databaseURL: "https://mygithubpage-15b65.firebaseio.com",
-		projectId: "mygithubpage-15b65",
-		storageBucket: "mygithubpage-15b65.appspot.com",
-		messagingSenderId: "228419205198"
+			apiKey: "AIzaSyBklqTig7EvHI_2EzkKUEw98rPQGWv_yBk",
+			authDomain: "first-pwa-273af.firebaseapp.com",
+			databaseURL: "https://first-pwa-273af.firebaseio.com",
+			projectId: "first-pwa-273af",
+			storageBucket: "first-pwa-273af.appspot.com",
+			messagingSenderId: "488178950132"
 		};
 		firebase.initializeApp(config);
+		const firestore = firebase.firestore();
+		const settings = {timestampsInSnapshots: true};
+		firestore.settings(settings);
 	</script>
 </body>
 </html>

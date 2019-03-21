@@ -70,7 +70,7 @@ CSS Structure...
     visibility: visible;
 }
 
-.itemframe>.overlay>.badges>span>p:hover{
+.itemframe>.overlay>.badges>span:hover>p{
 	border-radius: 5px;
 	visibility: visible;
 	filter: brightness(1.2);
