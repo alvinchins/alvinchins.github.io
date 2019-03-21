@@ -1,11 +1,4 @@
 $(document).ready(function(){
-	var numOfSites = 0;
-
-	function checkWidth(){
-		var holderHeight = 0;
-		holderHeight = 316 * (Math.ceil(numOfSites/Math.round($("#mySites").width()/$("#mySites").children(0).width())));
-		$("#mySites").height(holderHeight);
-	}
 
 	// Setup firebase db
 	var db = firebase.firestore();
@@ -23,7 +16,6 @@ $(document).ready(function(){
 				if (projectName.length>=15) {
 					projectName = projectName.substring(0, 15)+"...";
 				}
-				numOfSites++;
 				if (doc.wordpress) {
 					projectWp = '<span title="WordPress" class="b_wp"><p>WORDPRESS</p></span>';
 				}
@@ -40,7 +32,7 @@ $(document).ready(function(){
 					projectNsfw = '<span title="Not Safe For Work" class="b_nsfw"><p>NOT SAFE FOR WORK</p></span>';
 				}
 				var template = [
-				'<div class="col-12 col-md-6 col-lg-4">',
+				'<div class="col-12 col-md-12 col-lg-6">',
 					'<div class="browserFrame">',
 						'<div class="titlebar">',
 							'<h4 class="titleDisplay">',
@@ -71,7 +63,9 @@ $(document).ready(function(){
 									projectNsfw,
 								'</div>',
 							'</div>',
-							'<img src='+doc.thumbnail_url+'>',
+							'<div class="imageframe">',
+								'<img src='+doc.thumbnail_url+'>',
+							'</div>',
 						'</div>',
 					'</div>',
 				'</div>'
@@ -79,19 +73,7 @@ $(document).ready(function(){
 				$("#mySites").append(template);
 			}
 		});
-		checkWidth();
 	});
-
-//    $.getJSON("data.js", function(works){
-//        $.each(works,function(work,projects){
-//        	$.each(projects,function(i,project){
-//
-//       	});
-//        });
-//        checkWidth();
-//    });
-
-	$(window).resize(checkWidth);
 
 	window.onscroll = function(){stickCheck()};
 	var menuBar = document.getElementsByClassName("header");
