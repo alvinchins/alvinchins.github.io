@@ -21,21 +21,18 @@
 </div>
 
 
-<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
 <script>
 	// Initialize Firebase
 	var config = {
-		apiKey: "AIzaSyBklqTig7EvHI_2EzkKUEw98rPQGWv_yBk",
-		authDomain: "first-pwa-273af.firebaseapp.com",
-		databaseURL: "https://first-pwa-273af.firebaseio.com",
-		projectId: "first-pwa-273af",
-		storageBucket: "first-pwa-273af.appspot.com",
-		messagingSenderId: "488178950132"
+	apiKey: "AIzaSyD6Brky5okB-6wZL9PY70BNrXcHsLtqm4I",
+	authDomain: "my-github-page-storage.firebaseapp.com",
+	databaseURL: "https://my-github-page-storage.firebaseio.com",
+	projectId: "my-github-page-storage",
+	storageBucket: "my-github-page-storage.appspot.com",
+	messagingSenderId: "554549258329"
 	};
 	firebase.initializeApp(config);
-	const firestore = firebase.firestore();
-	const settings = {timestampsInSnapshots: true};
-	firestore.settings(settings);
 
 	function saveToFirebase() {
 		document.getElementById("state").innerHTML = "Starting...";
