@@ -1,6 +1,6 @@
-/**
-The A-Site
-**/
+/*
+* The A-Site
+*/
 
 body{
 	font-family: 'Quicksand', sans-serif;
@@ -14,7 +14,7 @@ h1{
 }
 
 .fullWidth{
-	width: 100%;
+	width: 100vw;
 }
 
 .section{
@@ -38,18 +38,94 @@ h1{
 	width: 100%;
 	height: 40px;
 	background: black;
-	z-index: 99;
+	z-index: 999;
 }
 
+/*
+* Banner
+*/
 .banner{
+	position: relative;
 	height: 100vh;
-	display: flex;
+	overflow: hidden;
 }
 
-.bannerText{
-	margin: auto;
+.banner>div{
+	position: absolute;
+	animation-name: clo-rotation;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	width: 100%;
+	height: 100%;	
 }
 
+@keyframes clo-rotation{
+	from{transform: rotate(0deg);}
+	to{transform: rotate(360deg);}
+}
+
+.banner>.rev-rotation{
+	animation-name: rev-rotation;
+}
+
+@keyframes rev-rotation{
+	from{transform: rotate(360deg);}
+	to{transform: rotate(0deg);}
+}
+
+.banner>div>p{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100vh;
+}
+/*
+* Banner -content
+*/
+.layer1{
+	animation-duration: 2s;
+	font-size: 1.5rem;
+}
+
+.layer2{
+	animation-duration: 30s;
+	font-size: 18rem;
+}
+
+.layer3{
+	animation-duration: 10s;
+	font-size: 5rem;
+}
+
+.layer4{
+	animation-duration: 40s;
+	font-size: 5rem;
+}	
+
+.arcs{
+	border: 16px solid #212529;
+    display: inline-block;
+    min-width: 4em;
+    min-height: 4em;
+    border-radius: 50%;
+    border-left-color: #F44336;
+    border-right-color: #00BCD4;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+}
+
+/*
+* Content
+*/
+
+/*
+* Content - site display
+*/
 #mySites{
 	min-height: 320px;
 }
@@ -186,22 +262,3 @@ h1{
     object-position: top;	
 }
 
-/**
-.contentArea{
-	background-color: white;
-	height: 200px;
-	width: 100%;
-	position: relative;
-	-moz-transform: scale(0.25);
-	-moz-transform-origin: 0 0;
-	-o-transform: scale(0.25);
-	-o-transform-origin: 0 0;
-	-webkit-transform: scale(0.25);
-	-webkit-transform-origin: 0 0;
-}
-
-.contentArea>iframe{
-	width: 1280px;
-	height: 800px;
-}
-**/
