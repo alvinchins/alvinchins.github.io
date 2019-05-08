@@ -75,14 +75,8 @@ $(document).ready(function(){
 		});
 	});
 
-	window.onscroll = function(){stickCheck()};
-	var menuBar = document.getElementsByClassName("header");
-	var sticky = menuBar[0].offsetTop;
-	function stickCheck(){
-		if (window.pageYOffset >= sticky) {
-			menuBar[0].classList.add("sticky");
-		}else{
-			menuBar[0].classList.remove("sticky");
-		}
-	}
+	setTimeout(function(){
+        $('#loader-wrapper').fadeOut();
+        $('.header').fadeIn();
+    }, 1000);
 });

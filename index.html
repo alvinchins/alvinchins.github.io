@@ -17,8 +17,8 @@
 	<script src="jscript.js"></script>
 </head>
 <body>
-	<div class="section fullWidth">
-		<div class="banner">
+	<div id='loader-wrapper' class="section fullWidth">
+		<div class="loader">
 			<div class="layer1">
 				<p><i class="fas fa-circle-notch"></i></p>
 			</div>
@@ -33,7 +33,38 @@
 			</div>
 		</div>			
 	</div>
-	<div class="header fullWidth"></div>
+	<div class="header fullWidth sticky">
+		<nav class="navbar container navbar-expand-md navbar-dark fixed-top">
+			<a class="navbar-brand" href="/"><img src="./img/logo/logo_white.png"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#">[TBC...]</a>
+					</li>
+				</ul>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Contact</button>
+			</div>
+    	</nav>
+	</div>
+	<div class="banner fullWidth"></div>
 	<div class="content fullWidth">
 		<div class="section fullWidth">
 			<div><h1>This Page Is Still Under Consturction</h1></div>
