@@ -1,9 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-AU" class="no-js no-svg">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Allripe System Administrator</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/allripe.css">
 </head>
 <body>
-
+	<header>
+		<div id="collapse-menu-button"><button onclick="openNav()">☰</button></div>
+		<div class="allripe-logo"><a href="#">Allripe</a></div>
+		<div class="allripe-menu">
+			<ul>
+				<li><a href="#">Profile</a></li>
+				<li><a href="#">Logout</a></li>
+			</ul>
+		</div>
+	</header>
+	<section></section>
+	<footer>
+		<span><a href="#">Allripe</a> Pty Ltd</span>
+	</footer>
+	<div id="collapse-menu" class="sidebar">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		<ul>
+			<li>
+				<a href="#">Website Analysis</a>
+				<ul>
+					<li><a href="#">Sub-Category-A</a></li>
+					<li><a href="#">Sub-Category-B</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Services Analysis</a>
+				<ul>
+					<li><a href="#">Sub-Category-A</a></li>
+					<li><a href="#">Sub-Category-B</a></li>
+					<li><a href="#">Sub-Category-C</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Clients</a>
+				<ul>
+					<li><a href="#">Sub-Category-A</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Other Options</a>
+			</li>
+		</ul>
+	</div>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/allripe.js"></script>
 </body>
 </html>
