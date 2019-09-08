@@ -137,3 +137,67 @@ arCharts
     background-color: rgba(0, 0, 0, 0.25);
     padding: 10px;
 }
+
+.chart-container>h2{
+    color: #818181;
+}
+
+/*
+login
+*/
+.login-form{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh;
+    max-width: 250px;
+    min-width: 200px;
+    padding: 32px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.login-form label,.login-form input,.login-form button,.login-form span{
+    color: #ccc;
+    display: block;
+}
+
+.login-form input,.login-form button{
+    width: 100%;
+}
+
+
+.login-form label{
+    margin-bottom: 0;
+}
+
+.login-form input{
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.login-form>.rpw>input{
+    display: inline;
+}
+
+.rpw>input{
+    width: unset;
+}
+
+.login-form>button{
+    background-color: cornflowerblue;
+    border: 0;
+    padding: 5px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    font-weight: bold;
+    border-radius: 5px
+}
+
+.psw{
+    width: 100%;
+    text-align: center;
+    color: #818181;
+    margin-top: 10px;
+}

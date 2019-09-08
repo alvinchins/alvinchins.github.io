@@ -1,9 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-AU" class="no-js no-svg">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Allripe System Login</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/allripe.css">
 </head>
 <body>
-
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<form class="login-form" action="./admin.html">
+							<label for="uname"><b>Username</b></label>
+							<input type="text" placeholder="Enter Username" name="uname" required>
+							<label for="psw"><b>Password</b></label>
+							<input type="password" placeholder="Enter Password" name="psw" required>
+							<button type="submit">Login</button>
+							<span class="rpw">
+								<input type="checkbox" checked="checked" name="remember"> Remember me
+							</span>
+					</form>
+					<div class="psw">Forgot <a href="#">password?</a></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/allripe.js"></script>
 </body>
 </html>
