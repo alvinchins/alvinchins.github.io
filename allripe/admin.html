@@ -109,9 +109,19 @@
 			</li>
 		</ul>
 	</div>
+	<div class="page-loader">
+		<div class="animation-holder">
+			<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+		</div>
+	</div>
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/Chart.bundle.min.js"></script>
 	<script src="js/allripe.js"></script>
+	<script>
+			window.setTimeout(function(){
+			$('.page-loader').fadeOut(500);
+			}, 3000);
+		</script>
 </body>
 </html>
