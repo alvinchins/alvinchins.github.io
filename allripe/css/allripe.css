@@ -37,6 +37,10 @@ section{
     padding: 32px;
 }
 
+.white-title{
+    color: white;
+}
+
 /*
 Loader
 */
@@ -65,12 +69,12 @@ Loader
     position: relative;
     width: 64px;
     height: 64px;
-  }
-  .lds-roller div {
+}
+.lds-roller div {
     animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     transform-origin: 32px 32px;
-  }
-  .lds-roller div:after {
+}
+.lds-roller div:after {
     content: " ";
     display: block;
     position: absolute;
@@ -79,71 +83,71 @@ Loader
     border-radius: 50%;
     background: #fed;
     margin: -3px 0 0 -3px;
-  }
-  .lds-roller div:nth-child(1) {
+}
+.lds-roller div:nth-child(1) {
     animation-delay: -0.036s;
-  }
-  .lds-roller div:nth-child(1):after {
+}
+.lds-roller div:nth-child(1):after {
     top: 50px;
     left: 50px;
-  }
-  .lds-roller div:nth-child(2) {
+}
+.lds-roller div:nth-child(2) {
     animation-delay: -0.072s;
-  }
-  .lds-roller div:nth-child(2):after {
+}
+.lds-roller div:nth-child(2):after {
     top: 54px;
     left: 45px;
-  }
-  .lds-roller div:nth-child(3) {
+}
+.lds-roller div:nth-child(3) {
     animation-delay: -0.108s;
-  }
-  .lds-roller div:nth-child(3):after {
+}
+.lds-roller div:nth-child(3):after {
     top: 57px;
     left: 39px;
-  }
-  .lds-roller div:nth-child(4) {
+}
+.lds-roller div:nth-child(4) {
     animation-delay: -0.144s;
-  }
-  .lds-roller div:nth-child(4):after {
+}
+.lds-roller div:nth-child(4):after {
     top: 58px;
     left: 32px;
-  }
-  .lds-roller div:nth-child(5) {
+}
+.lds-roller div:nth-child(5) {
     animation-delay: -0.18s;
-  }
-  .lds-roller div:nth-child(5):after {
+}
+.lds-roller div:nth-child(5):after {
     top: 57px;
     left: 25px;
-  }
-  .lds-roller div:nth-child(6) {
+}
+.lds-roller div:nth-child(6) {
     animation-delay: -0.216s;
-  }
-  .lds-roller div:nth-child(6):after {
+}
+.lds-roller div:nth-child(6):after {
     top: 54px;
     left: 19px;
-  }
-  .lds-roller div:nth-child(7) {
+}
+.lds-roller div:nth-child(7) {
     animation-delay: -0.252s;
-  }
-  .lds-roller div:nth-child(7):after {
+}
+.lds-roller div:nth-child(7):after {
     top: 50px;
     left: 14px;
-  }
-  .lds-roller div:nth-child(8) {
+}
+.lds-roller div:nth-child(8) {
     animation-delay: -0.288s;
-  }
-  .lds-roller div:nth-child(8):after {
+}
+.lds-roller div:nth-child(8):after {
     top: 45px;
     left: 10px;
-  }
-  @keyframes lds-roller {
+}
+@keyframes lds-roller {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
   
 
 /*
@@ -324,3 +328,114 @@ Logout
     margin-top: 45vh;
     text-align: center;
 }
+
+/*
+Admin-User-Management
+*/
+.search-form{
+    float: right;
+}
+
+.tool-bar-left,.tool-bar-right{
+    margin-top: 10px;
+}
+
+.tool-bar-left>button{
+    width: 100%;
+}
+
+.tool-bar-right>form{
+    text-align: right;
+    width: 100%;
+    position: relative;
+    height: 40px;
+}
+
+.search-form>input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: bold;
+    color: #cccccc;
+    padding: 5px 100px 5px 10px;
+    margin: 2px 0;
+    border: 1px solid;
+}
+
+.search-form>button{
+    position: absolute;
+    right: -2px;
+    top: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.search-form>button:hover{
+    border: 1px solid white;
+}
+
+.ar-roster-container{
+    margin-top: 10px;
+}
+
+.ar-roster-container>table{
+    width: 100%;
+}
+
+.ar-roster-container>table p{
+    color: white;
+    display: inline;
+}
+
+.ar-roster-header{
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.ar-roster-entry{
+    background-color:rgba(0, 0, 0, 0.25);
+}
+
+.ar-roster-entry-id{
+    width: 80px;
+    text-align: center;
+}
+
+.ar-roster-entry-name,.ar-roster-entry-role{
+    max-width: 20%;
+    text-align: center;
+}
+
+.ar-roster-container>table tr>.ar-roster-entry-operations{
+    text-align: right;
+    padding-right: 15px;
+}
+
+.general-button{
+    min-width: 80px;
+    font-weight: bold;
+    color: #cccccc;
+    background-color: rgb(25, 22, 41);
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 5px;
+    border: 1px solid;
+    transition: all 0.25s;
+}
+
+.general-button:hover{
+    color: rgba(19, 17, 34, 0.5);
+    background-color: #cccccc;
+}
+
+.ar-roster-container>table td,.ar-roster-container>table th{
+    padding: 8px;
+    border: 1px solid rgb(40, 36, 66);
+}
+
+@media (max-width: 600px) {
+    .ar-roster-container>table td,.ar-roster-container>table th{
+        padding: 4px;
+    }
+}
+

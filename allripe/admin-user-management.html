@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="no-js no-svg">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Allripe System Administrator</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/Chart.min.css">
+	<link rel="stylesheet" type="text/css" href="css/allripe.css">
+</head>
+<body>
+	<header>
+		<div id="collapse-menu-button"><button onclick="openNav()">☰</button></div>
+		<div class="allripe-logo"><a href="./admin.html">Allripe</a></div>
+		<div class="allripe-menu">
+			<ul>
+				<li><a href="./profile.html">Profile</a></li>
+				<li><a href="./logout.html">Logout</a></li>
+			</ul>
+		</div>
+	</header>
+	<section class="section-fix">
+		<div class="container">
+			<div class="row">
+				<h2 class="white-title">User Management</h2>
+			</div>
+			<div class="row tool-bar">
+				<div class="tool-bar-left col-sm-3">
+					<button class="general-button">Add New</button>
+				</div>
+				<div class="tool-bar-right offset-sm-5 col-sm-4">
+					<form class="search-form" action="">
+						<input type="text">
+						<button class="general-button">Search</button>
+					</form>
+				</div>
+			</div>
+			<div class="row ar-roster-container">
+				<table>
+					<tr class="ar-roster-header">
+						<th class="ar-roster-entry-id"><p>User ID</p></th>
+						<th class="ar-roster-entry-name"><p>Name</p></th>
+						<th class="ar-roster-entry-role"><p>Role</p></th>
+						<th class="ar-roster-entry-operations"><p>Operations</p></th>
+					</tr>
+					<tr class="ar-roster-entry">
+						<td class="ar-roster-entry-id"><p>0001</p></td>
+						<td class="ar-roster-entry-name"><p>Eddard Stark</p></td>
+						<td class="ar-roster-entry-role"><p>Admin</p></td>
+						<td class="ar-roster-entry-operations">
+							<button class="general-button">Edit</button>
+							<button class="general-button">Delete</button>
+						</td>
+					</tr>
+					<tr class="ar-roster-entry">
+						<td class="ar-roster-entry-id"><p>0002</p></td>
+						<td class="ar-roster-entry-name"><p>Catelyn Tully</p></td>
+						<td class="ar-roster-entry-role"><p>Team</p></td>
+						<td class="ar-roster-entry-operations">
+							<button class="general-button">Edit</button>
+							<button class="general-button">Delete</button>
+						</td>
+					</tr>
+					<tr class="ar-roster-entry">
+						<td class="ar-roster-entry-id"><p>0003</p></td>
+						<td class="ar-roster-entry-name"><p>Samwell Tarly</p></td>
+						<td class="ar-roster-entry-role"><p>Support</p></td>
+						<td class="ar-roster-entry-operations">
+							<button class="general-button">Edit</button>
+							<button class="general-button">Delete</button>
+						</td>
+					</tr>
+					<tr class="ar-roster-entry">
+						<td class="ar-roster-entry-id"><p>0004</p></td>
+						<td class="ar-roster-entry-name"><p>Jon Snow</p></td>
+						<td class="ar-roster-entry-role"><p>Team</p></td>
+						<td class="ar-roster-entry-operations">
+							<button class="general-button">Edit</button>
+							<button class="general-button">Delete</button>
+						</td>
+					</tr>
+					<tr class="ar-roster-entry">
+						<td class="ar-roster-entry-id"><p>0005</p></td>
+						<td class="ar-roster-entry-name"><p>Jeor Mormont</p></td>
+						<td class="ar-roster-entry-role"><p>Team</p></td>
+						<td class="ar-roster-entry-operations">
+							<button class="general-button">Edit</button>
+							<button class="general-button">Delete</button>
+						</td>
+					</tr>
+					<tr class="ar-roster-entry">
+						<td class="ar-roster-entry-id"><p>0006</p></td>
+						<td class="ar-roster-entry-name"><p>Theon Greyjoy</p></td>
+						<td class="ar-roster-entry-role"><p>Support</p></td>
+						<td class="ar-roster-entry-operations">
+							<button class="general-button">Edit</button>
+							<button class="general-button">Delete</button>
+						</td>
+					</tr>			
+				</table>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<span><a href="#">Allripe</a> Pty Ltd</span>
+	</footer>
+	<div id="collapse-menu" class="sidebar">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		<ul>
+			<li>
+				<a href="#">Website Analysis</a>
+				<ul>
+					<li><a href="#">Sub-Category-A</a></li>
+					<li><a href="#">Sub-Category-B</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Services Analysis</a>
+				<ul>
+					<li><a href="#">Sub-Category-A</a></li>
+					<li><a href="#">Sub-Category-B</a></li>
+					<li><a href="#">Sub-Category-C</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Clients</a>
+				<ul>
+					<li><a href="#">Sub-Category-A</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="./admin-user-management.html">User Management</a>
+				<a href="#">Other Options</a>
+			</li>
+		</ul>
+	</div>
+	<div class="page-loader">
+		<div class="animation-holder">
+			<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+		</div>
+	</div>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/Chart.bundle.min.js"></script>
+	<script src="js/allripe.js"></script>
+	<script>
+			window.setTimeout(function(){
+			$('.page-loader').fadeOut(500);
+			}, 1000);
+	</script>
+</body>
+</html>
