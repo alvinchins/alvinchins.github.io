@@ -7,18 +7,17 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/Chart.min.css">
 	<link rel="stylesheet" type="text/css" href="css/allripe.css">
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script> 
+		$(function(){
+			$("header").load("header.html"); 
+			$("footer").load("footer.html"); 
+			$("#collapse-menu").load("slide-menu.html");
+		});
+	</script> 
 </head>
-<body>
-	<header>
-		<div id="collapse-menu-button"><button onclick="openNav()">☰</button></div>
-		<div class="allripe-logo"><a href="./admin.html">Allripe</a></div>
-		<div class="allripe-menu">
-			<ul>
-				<li><a href="./profile.html">Profile</a></li>
-				<li><a href="./logout.html">Logout</a></li>
-			</ul>
-		</div>
-	</header>
+<body class="chart_page">
+	<header></header>
 	<section class="section-fix">
 		<div class="container">
 			<div class="row">
@@ -77,52 +76,20 @@
 			</div>
 		</div>
 	</section>
-	<footer>
-		<span><a href="#">Allripe</a> Pty Ltd</span>
-	</footer>
-	<div id="collapse-menu" class="sidebar">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-		<ul>
-			<li>
-				<a href="#">Website Analysis</a>
-				<ul>
-					<li><a href="#">Sub-Category-A</a></li>
-					<li><a href="#">Sub-Category-B</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Services Analysis</a>
-				<ul>
-					<li><a href="#">Sub-Category-A</a></li>
-					<li><a href="#">Sub-Category-B</a></li>
-					<li><a href="#">Sub-Category-C</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Clients</a>
-				<ul>
-					<li><a href="#">Sub-Category-A</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="./admin-user-management.html">User Management</a>
-				<a href="#">Other Options</a>
-			</li>
-		</ul>
-	</div>
+	<footer></footer>
+	<div id="collapse-menu" class="sidebar"></div>
 	<div class="page-loader">
 		<div class="animation-holder">
 			<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 		</div>
 	</div>
-	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/Chart.bundle.min.js"></script>
 	<script src="js/allripe.js"></script>
 	<script>
-			window.setTimeout(function(){
-			$('.page-loader').fadeOut(500);
-			}, 3000);
-		</script>
+		window.setTimeout(function(){
+		$('.page-loader').fadeOut(500);
+		}, 3000);
+	</script>
 </body>
 </html>

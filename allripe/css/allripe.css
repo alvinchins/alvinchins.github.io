@@ -44,7 +44,7 @@ section{
 /*
 Loader
 */
-.page-loader{
+.page-loader,.add-new-user,.edit-user,.remove-user{
     width: 100%;
     height: 100%;
     z-index: 100;
@@ -52,6 +52,11 @@ Loader
     position: fixed;
     top: 0;
     left: 0;
+}
+
+.add-new-user,.edit-user,.remove-user{
+    background-color: rgba(40, 36, 66, 0.75);
+    display: none;
 }
 
 .animation-holder{
@@ -273,7 +278,7 @@ login
     display: block;
 }
 
-.login-form input,.login-form button{
+.login-form input,.login-form button,.login-form select{
     width: 100%;
 }
 
@@ -282,7 +287,7 @@ login
     margin-bottom: 0;
 }
 
-.login-form input{
+.login-form input,.login-form select{
     margin-bottom: 10px;
     margin-bottom: 10px;
     border: 0;
@@ -439,3 +444,43 @@ Admin-User-Management
     }
 }
 
+/*
+Admin-User-Management-Operations
+*/
+.add-user-form{
+    background-color: #231f3a;
+    border: 1px solid #98979f;
+    border-radius: 5px;
+}
+
+.add-user-form>button{
+    width: 40%;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#cancel_action,#cancel_action_edit,#cancel_action_remove,#action_remove{
+    float: right;
+    background-color: darkgray;
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border: 0;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    color: #cccccc;
+    text-decoration: none;
+}
+
+.remove-user .login-form{
+    margin-top: 40vh;
+    height: 140px;
+}
+
+#action_remove{
+    background-color: cornflowerblue;
+    float: left;
+}
