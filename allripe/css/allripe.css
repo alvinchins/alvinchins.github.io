@@ -1,6 +1,10 @@
 /*
 General
 */
+.empty_space{
+    height: 16px;;
+}
+
 h2{
     font-size: 1.2rem;
 }
@@ -533,4 +537,68 @@ Admin-User-Management-Operations
 #action_remove{
     background-color: cornflowerblue;
     float: left;
+}
+
+/*
+Profile
+*/
+.avatar,.activity_counter,.contact_details{
+    width: 100%;
+    text-align: center;
+    color: #cccccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #131122;
+}
+
+.avatar>img{
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.activity_counter{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.utitle{
+    font-size: 0.8rem;
+}
+
+.counter_display{
+    width: 45%;
+    display: inline-block;
+}
+
+.counter_display p,.activity_list p{
+    margin-bottom: 0;
+}
+
+.counter_display:first-child{
+    border-right: 1px solid rgba(204, 204, 204, 0.25);
+}
+
+.contact_details{
+    text-align: left;
+}
+
+.activity_list{
+    color: #cccccc;
+    padding-right: 10px;
+    margin-top: 16px;
+}
+
+.activity_list li{
+    margin-bottom: 10px;
+}
+
+.activity_list p{
+    padding-bottom: 10px;
+}
+
+.post_item{
+    padding: 16px;
+    min-height: 100px;
+    width: 100%;
+    background-color: rgba(19, 17, 34, 0.5);
 }
