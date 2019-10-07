@@ -36,6 +36,14 @@ $(document).ready(function(){
                     ],
                     borderColor: ['rgba(254,89,0,0.5)'],
                     pointBackgroundColor: 'Yellow'
+                },{
+                    label: 'Number of Returning Visitors',
+                    data: [800, 500, 2527, 648, 2514, 3065, 4447, 2523, 1054, 3709, 3872, 2426],
+                    backgroundColor: [
+                        'transparent'
+                    ],
+                    borderColor: ['rgba(22,40,94,1)'],
+                    pointBackgroundColor: 'lightblue'
                 }]
             },
             options: {
@@ -60,21 +68,21 @@ $(document).ready(function(){
             data: {
                 labels: ['0-6', '7-17', '18-28', '29-40', '41-65', '>66'],
                 datasets: [{
-                    data: [56, 3239, 7927, 10238, 4313, 121],
+                    data: [556, 3239, 7927, 10238, 4313, 621],
                     backgroundColor: [
-                        'rgba(1,31,75, 0.2)',
-                        'rgba(3,57,108, 0.2)',
-                        'rgba(0,91,150, 0.2)',
-                        'rgba(100,151,177, 0.2)',
-                        'rgba(179,205,224, 0.2)',
+                        'rgba(83,191,20, 0.2)',
+                        'rgba(187,245,13, 0.2)',
+                        'rgba(255,170,1, 0.2)',
+                        'rgba(254,89,0, 0.2)',
+                        'rgba(250,234,1, 0.2)',
                         'rgba(217,230,239, 0.2)'
                     ],
                     borderColor: [
-                        'rgba(1,31,75, 1)',
-                        'rgba(3,57,108, 1)',
-                        'rgba(0,91,150, 1)',
-                        'rgba(100,151,177, 1)',
-                        'rgba(179,205,224, 1)',
+                        'rgba(83,191,20, 1)',
+                        'rgba(187,245,13, 1)',
+                        'rgba(255,170,1, 1)',
+                        'rgba(254,89,0, 1)',
+                        'rgba(250,234,1, 1)',
                         'rgba(217,230,239, 1)'
                     ],
                     borderWidth: 1
@@ -82,7 +90,7 @@ $(document).ready(function(){
             },
             options: {
                 legend: {
-                    position: 'top'
+                    position: 'left'
                 }
             }
         });
@@ -100,7 +108,7 @@ $(document).ready(function(){
                         'rgba(0,128,128, 0.2)',
                         'rgba(2,137,0, 0.2)',
                         'rgba(219,172,152, 0.2)',
-                        'rgba(67,232,216, 0.2)',
+                        'rgba(24,154,211, 0.2)',
                         'rgba(190,41,236, 0.2)'
                     ],
                     borderColor: [
@@ -108,7 +116,7 @@ $(document).ready(function(){
                         'rgba(0,128,128, 1)',
                         'rgba(2,137,0, 1)',
                         'rgba(219,172,152, 1)',
-                        'rgba(67,232,216, 1)',
+                        'rgba(24,154,211, 1)',
                         'rgba(190,41,236, 1)'
                     ],
                     borderWidth: 1
@@ -169,11 +177,20 @@ $(document).ready(function(){
             data: {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 datasets: [{
-                    label: 'Number of Posts',
+                    label: 'Number of New Posts',
                     data: [1210, 920, 3427, 1248, 4214, 6165, 5847, 3123, 2254, 4809, 5372, 4126],
                     backgroundColor: [
-                        'rgba(255,251,150, 0.2)'
+                        'rgba(24,154,211, 0.2)'
                     ],
+                    borderColor: ['rgb(30,187,215)'],
+                    pointBackgroundColor: 'white'
+                },{
+                    label: 'Number of Posts',
+                    data: [11210, 12130, 15557, 16805, 21019, 27184, 33031, 36154, 38408, 43217, 48589, 52715],
+                    backgroundColor: [
+                        'rgba(67,62,144, 0.2)'
+                    ],
+                    borderColor: ['rgb(67,62,144)'],
                     pointBackgroundColor: 'white'
                 }]
             },
@@ -301,14 +318,14 @@ $(document).ready(function(){
                     label: '# of Posts',
                     data: [1260, 3978, 2745],
                     backgroundColor: [
-                        'rgba(238,193,173, 0.2)',
-                        'rgba(219,172,152, 0.2)',
-                        'rgba(210,153,133, 0.2)'
+                        'rgba(215,184,163, 0.2)',
+                        'rgba(235,171,127, 0.2)',
+                        'rgba(113,82,61, 0.2)'
                     ],
                     borderColor: [
-                        'rgba(238,193,173, 1)',
-                        'rgba(219,172,152, 1)',
-                        'rgba(210,153,133, 1)'
+                        'rgba(215,184,163, 1)',
+                        'rgba(235,171,127, 1)',
+                        'rgba(113,82,61, 1)'
                     ],
                     borderWidth: 1
                 }]
@@ -329,18 +346,18 @@ $(document).ready(function(){
                     label: '# of Posts',
                     data: [2313, 2525, 4352, 1445, 1234],
                     backgroundColor: [
-                        'rgba(179,236,236, 0.2)',
-                        'rgba(137,236,218, 0.2)',
-                        'rgba(67,232,216, 0.2)',
-                        'rgba(64,224,208, 0.2)',
-                        'rgba(59,214,198, 0.2)'
+                        'rgba(113,199,236, 0.2)',
+                        'rgba(30,187,215, 0.2)',
+                        'rgba(24,154,211, 0.2)',
+                        'rgba(16,125,172, 0.2)',
+                        'rgba(0,80,115, 0.2)'
                     ],
                     borderColor: [
-                        'rgba(179,236,236, 1)',
-                        'rgba(137,236,218, 1)',
-                        'rgba(67,232,216, 1)',
-                        'rgba(64,224,208, 1)',
-                        'rgba(59,214,198, 1)'
+                        'rgba(113,199,236, 1)',
+                        'rgba(30,187,215, 1)',
+                        'rgba(24,154,211, 1)',
+                        'rgba(16,125,172, 1)',
+                        'rgba(0,80,115, 1)'
                     ],
                     borderWidth: 1
                 }]

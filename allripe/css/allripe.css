@@ -5,7 +5,11 @@ h2{
     font-size: 1.2rem;
 }
 
-h4,h5{
+h4{
+    font-size: 1.25rem;
+}
+
+h5{
     font-size: 1rem;
 }
 
@@ -47,6 +51,15 @@ section{
 
 .white-title{
     color: white;
+}
+
+.details{
+    font-size: 0.8rem;
+    float: right;
+}
+
+.details:hover{
+    text-decoration: none;
 }
 
 /*
