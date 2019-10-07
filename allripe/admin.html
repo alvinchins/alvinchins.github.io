@@ -15,62 +15,125 @@
 			$("#collapse-menu").load("slide-menu.html");
 		});
 	</script> 
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body class="chart_page">
 	<header></header>
 	<section class="section-fix">
 		<div class="container">
 			<div class="row">
+				<div class="arCharts col-md-7">
+					<div class="chart-container">
+						<h2>Overview</h2>
+						<h5 class="sub-h">General Statistics of The System</h5>
+						<div class="arDatas row">
+							<div class="col-md-4">
+								<h4>Website</h4>
+								<h5>Registered User</h5>
+								<p>13762</p>
+								<h5>Online User</h5>
+								<p>320</p>
+								<h5>Post Total</h5>
+								<p>214977</p>
+							</div>
+							<div class="col-md-4">
+								<h4>IoT</h4>
+								<h5>Installed Device</h5>
+								<p>832</p>
+								<h5>Active Device</h5>
+								<p>828</p>
+								<h5>Report Received</h5>
+								<p>824676</p>
+							</div>
+							<div class="col-md-4">
+								<h4>System</h4>
+								<h5>Total Staff</h5>
+								<p>23</p>
+								<h5>Staff Online</h5>
+								<p>17</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="arCharts col-md-5">
+					<div class="chart-container">
+						<h2>Post and Location</h2>
+						<h5 class="sub-h">Number of Post From Different Region</h5>
+						<div id="regions_div" style="width: 100%; height: auto;"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
 				<div class="arCharts col-md-8">
 					<div class="chart-container">
-						<h2>Sample Table Title</h2>
-						<canvas id="myChart1" width="200" height="120"></canvas>
+						<h2>Post Statistics</h2>
+						<h5 class="sub-h">Number of Post for 2019</h5>
+						<canvas id="myChart8" width="300" height="150"></canvas>
 					</div>
 				</div>
 				<div class="arCharts col-md-4">
 					<div class="chart-container">
-						<h2>Sample Table Title</h2>
-						<canvas id="myChart2" width="80" height="100"></canvas>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="arCharts col-md-4">
-					<div class="chart-container">
-						<h2>Sample Table Title</h2>
-						<canvas id="myChart3" width="250" height="250"></canvas>
-					</div>
-				</div>
-				<div class="arCharts col-md-4">
-					<div class="chart-container">
-						<h2>Sample Table Title</h2>
-						<canvas id="myChart4" width="250" height="250"></canvas>
-					</div>
-				</div>
-				<div class="arCharts col-md-4">
-					<div class="chart-container">
-						<h2>Sample Table Title</h2>
-						<canvas id="myChart5" width="250" height="250"></canvas>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="arCharts col-md-3">
-					<div class="chart-container">
-						<h2>Table Title</h2>
+						<h2>Top Foods</h2>
+						<h5 class="sub-h">Top 8 Most Popular Food</h5>
 						<canvas id="myChart6" width="250" height="250"></canvas>
 					</div>
 				</div>
-				<div class="arCharts col-md-3">
+			</div>
+			<div class="row">
+				<div class="arCharts col-md-4">
 					<div class="chart-container">
-						<h2>Table Title</h2>
-						<canvas id="myChart7" width="250" height="250"></canvas>
+						<h2>Category Overview</h2>
+						<h5 class="sub-h">Number of Post for All Categories</h5>
+						<canvas id="myChart5" width="100" height="110"></canvas>
 					</div>
 				</div>
-				<div class="arCharts col-md-6">
+				<div class="arCharts col-md-8">
 					<div class="chart-container">
-						<h2>Sample Table Title</h2>
-						<canvas id="myChart8" width="300" height="150"></canvas>
+						<h2>Category Keyword Details</h2>
+						<div class="row">
+							<div class="col-md-4">
+								<h5 class="sub-h">Sight</h5>
+								<canvas id="myChart9" width="120" height="100"></canvas>
+							</div>
+							<div class="col-md-4">
+								<h5 class="sub-h">Smell</h5>
+								<canvas id="myChart10" width="120" height="100"></canvas>
+							</div>
+							<div class="col-md-4">
+								<h5 class="sub-h">Taste</h5>
+								<canvas id="myChart11" width="120" height="100"></canvas>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<h5 class="sub-h">Hear</h5>
+								<canvas id="myChart12" width="120" height="100"></canvas>
+							</div>
+							<div class="col-md-4">
+								<h5 class="sub-h">Touch</h5>
+								<canvas id="myChart13" width="120" height="100"></canvas>
+							</div>
+							<div class="col-md-4">
+								<h5 class="sub-h">IoT</h5>
+								<canvas id="myChart14" width="120" height="100"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="arCharts col-md-4">
+					<div class="chart-container">
+						<h2>Client Age Group</h2>
+						<h5 class="sub-h">Number of Post From Different Age Group</h5>
+						<canvas id="myChart2" width="150" height="150"></canvas>
+					</div>
+				</div>
+				<div class="arCharts col-md-8">
+					<div class="chart-container">
+						<h2>Website Traffic</h2>
+						<h5 class="sub-h">Allripe Website Traffic for 2019</h5>
+						<canvas id="myChart1" width="200" height="100"></canvas>
 					</div>
 				</div>
 			</div>
@@ -89,7 +152,7 @@
 	<script>
 		window.setTimeout(function(){
 		$('.page-loader').fadeOut(500);
-		}, 3000);
+		}, 1000);
 	</script>
 </body>
 </html>

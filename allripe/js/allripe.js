@@ -1,30 +1,41 @@
 $(document).ready(function(){
     if ($('.chart_page').length) {
+        google.charts.load('current', {
+            'packages':['geochart'],
+            'mapsApiKey': 'AIzaSyCF45fCdt05f4nE-k1xqLbGGkVlg5LL39I'
+            });
+            google.charts.setOnLoadCallback(drawRegionsMap);
+            function drawRegionsMap() {
+            var data = google.visualization.arrayToDataTable([
+                ['Country', 'Post'],
+                ['Australia', 12040],
+                ['United States', 7238],
+                ['New Zealand', 9344],
+                ['Canada', 5472],
+                ['France', 482],
+                ['China', 137]
+            ]);
+            var options = {
+                backgroundColor:'transparent',
+                colorAxis: {colors: ['#282442','#2b73af']},
+                datalessRegionColor: '#1a182b'
+            };
+            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+            chart.draw(data, options);
+        }
         var ctx = document.getElementById('myChart1').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'Number of Visitors',
+                    data: [1210, 920, 3427, 1248, 4214, 6165, 5847, 3123, 2254, 4809, 5372, 4126],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'transparent'
                     ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
+                    borderColor: ['rgba(254,89,0,0.5)'],
+                    pointBackgroundColor: 'Yellow'
                 }]
             },
             options: {
@@ -34,182 +45,78 @@ $(document).ready(function(){
                             beginAtZero: true
                         }
                     }]
-                }
-            }
-        });
-
-        var ctx = document.getElementById('myChart2').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'polarArea',
-            data: {
-                labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'],
-                datasets: [{
-                    label: '# of Points',
-                    data: [1, 9, 3, 12, 6, 8, 5, 11, 2, 7, 6, 4],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });  
-
-        var ctx = document.getElementById('myChart3').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'radar',
-            data: {
-                labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'],
-                datasets: [{
-                    label: '# of Points',
-                    data: [1, 9, 3, 12, 6, 8, 5, 11, 2, 7, 6, 4],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
+                },
+                elements: {
+                    line: {
+                        tension: 0
+                    }
                 }
             }
         }); 
 
-        var ctx = document.getElementById('myChart4').getContext('2d');
+        var ctx = document.getElementById('myChart2').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['0-6', '7-17', '18-28', '29-40', '41-65', '>66'],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    data: [56, 3239, 7927, 10238, 4313, 121],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(1,31,75, 0.2)',
+                        'rgba(3,57,108, 0.2)',
+                        'rgba(0,91,150, 0.2)',
+                        'rgba(100,151,177, 0.2)',
+                        'rgba(179,205,224, 0.2)',
+                        'rgba(217,230,239, 0.2)'
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(1,31,75, 1)',
+                        'rgba(3,57,108, 1)',
+                        'rgba(0,91,150, 1)',
+                        'rgba(100,151,177, 1)',
+                        'rgba(179,205,224, 1)',
+                        'rgba(217,230,239, 1)'
                     ],
                     borderWidth: 1
                 }]
             },
             options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
+                legend: {
+                    position: 'top'
                 }
             }
         });
 
         var ctx = document.getElementById('myChart5').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'doughnut',
+            type: 'bar',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Sight', 'Smell', 'Taste', 'Hear', 'Touch', 'IoT'],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'Number of Posts',
+                    data: [3260, 2978, 3745, 5512, 2793, 10032],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(100,151,177, 0.2)',
+                        'rgba(0,128,128, 0.2)',
+                        'rgba(2,137,0, 0.2)',
+                        'rgba(219,172,152, 0.2)',
+                        'rgba(67,232,216, 0.2)',
+                        'rgba(190,41,236, 0.2)'
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(100,151,177, 1)',
+                        'rgba(0,128,128, 1)',
+                        'rgba(2,137,0, 1)',
+                        'rgba(219,172,152, 1)',
+                        'rgba(67,232,216, 1)',
+                        'rgba(190,41,236, 1)'
                     ],
                     borderWidth: 1
                 }]
             },
             options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
+                legend: {
+                    position: 'top'
                 }
             }
         });
@@ -218,37 +125,29 @@ $(document).ready(function(){
         var myChart = new Chart(ctx, {
             type: 'horizontalBar',
             data: {
-                labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'],
+                labels: ['Apple', 'Banana', 'Apricots', 'Blackberries', 'Kiwifruit', 'Loquat', 'Coconut', 'Avocado'],
                 datasets: [{
-                    label: '# of Points',
-                    data: [1, 9, 3, 12, 6, 8, 5, 11, 2, 7, 6, 4],
+                    label: 'Number of Hits',
+                    data: [1023, 982, 645, 549, 428, 410, 324, 244],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
                         'rgba(255, 206, 86, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)'
+                        'rgba(83,191,20, 0.2)',
+                        'rgba(187,245,13, 0.2)',
+                        'rgba(255,170,1, 0.2)',
+                        'rgba(254,89,0, 0.2)',
+                        'rgba(250,234,1, 0.2)'
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
                         'rgba(54, 162, 235, 1)',
                         'rgba(255, 206, 86, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
+                        'rgba(83,191,20, 1)',
+                        'rgba(187,245,13, 1)',
+                        'rgba(255,170,1, 1)',
+                        'rgba(254,89,0, 1)',
+                        'rgba(250,234,1, 1)'
                     ],
                     borderWidth: 1
                 }]
@@ -263,72 +162,19 @@ $(document).ready(function(){
                 }
             }
         }); 
-
-        var ctx = document.getElementById('myChart7').getContext('2d');
-        var scatterChart = new Chart(ctx, {
-            type: 'scatter',
-            data: {
-                datasets: [{
-                    label: 'Scatter Dataset',
-                    data: [{
-                        x: -10,
-                        y: 0
-                    }, {
-                        x: 5,
-                        y: 5
-                    }, {
-                        x: 0,
-                        y: 9
-                    }, {
-                        x: 0,
-                        y: 7
-                    }, {
-                        x: 4,
-                        y: 7
-                    }, {
-                        x: 10,
-                        y: 5
-                    }],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    xAxes: [{
-                        type: 'linear',
-                        position: 'bottom'
-                    }]
-                }
-            }
-        });
 
         var ctx = document.getElementById('myChart8').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'],
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 datasets: [{
-                    label: '# of Points',
-                    data: [1, 9, 3, 12, 6, 8, 5, 11, 2, 7, 6, 4],
+                    label: 'Number of Posts',
+                    data: [1210, 920, 3427, 1248, 4214, 6165, 5847, 3123, 2254, 4809, 5372, 4126],
                     backgroundColor: [
-                        'rgba(54, 162, 235, 0.2)'
-                    ]
+                        'rgba(255,251,150, 0.2)'
+                    ],
+                    pointBackgroundColor: 'white'
                 }]
             },
             options: {
@@ -338,9 +184,205 @@ $(document).ready(function(){
                             beginAtZero: true
                         }
                     }]
+                },
+                elements: {
+                    line: {
+                        tension: 0
+                    }
                 }
             }
         }); 
+
+        var ctx = document.getElementById('myChart9').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Pink', 'White', 'Green', 'Light', 'Brown', 'Shiny'],
+                datasets: [{
+                    data: [2312, 5543, 1231, 7675, 2313, 2835],
+                    backgroundColor: [
+                        'rgba(1,31,75, 0.2)',
+                        'rgba(3,57,108, 0.2)',
+                        'rgba(0,91,150, 0.2)',
+                        'rgba(100,151,177, 0.2)',
+                        'rgba(179,205,224, 0.2)',
+                        'rgba(217,230,239, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(1,31,75, 1)',
+                        'rgba(3,57,108, 1)',
+                        'rgba(0,91,150, 1)',
+                        'rgba(100,151,177, 1)',
+                        'rgba(179,205,224, 1)',
+                        'rgba(217,230,239, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
+
+        var ctx = document.getElementById('myChart10').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Fresh', 'Sweet', 'Fragant', 'Good', 'Sour', 'Bitter'],
+                datasets: [{
+                    data: [7625, 2663, 3461, 4830, 1739, 924],
+                    backgroundColor: [
+                        'rgba(178,216,216, 0.2)',
+                        'rgba(102,178,178, 0.2)',
+                        'rgba(0,128,128, 0.2)',
+                        'rgba(0,102,102, 0.2)',
+                        'rgba(0,76,76, 0.2)',
+                        'rgba(0,68,68, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(178,216,216, 1)',
+                        'rgba(102,178,178, 1)',
+                        'rgba(0,128,128, 1)',
+                        'rgba(0,102,102, 1)',
+                        'rgba(0,76,76, 1)',
+                        'rgba(0,68,68, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
+
+        var ctx = document.getElementById('myChart11').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Milky', 'Sweet', 'Juicy', 'Sour', 'Bitter', 'Moist'],
+                datasets: [{
+                    data: [6738, 9392, 5472, 1638, 7463, 7468],
+                    backgroundColor: [
+                        'rgba(173,255,0, 0.2)',
+                        'rgba(116,214,0, 0.2)',
+                        'rgba(2,137,0, 0.2)',
+                        'rgba(0,210,127, 0.2)',
+                        'rgba(0,255,131, 0.2)',
+                        'rgba(127,255,193, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba((173,255,0, 1)',
+                        'rgba(116,214,0, 1)',
+                        'rgba(2,137,0, 1)',
+                        'rgba(0,210,127, 1)',
+                        'rgba(0,255,131, 1)',
+                        'rgba(127,255,193, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
+
+        var ctx = document.getElementById('myChart12').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Crunchy', 'Crispy', 'No-Sound'],
+                datasets: [{
+                    label: '# of Posts',
+                    data: [1260, 3978, 2745],
+                    backgroundColor: [
+                        'rgba(238,193,173, 0.2)',
+                        'rgba(219,172,152, 0.2)',
+                        'rgba(210,153,133, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(238,193,173, 1)',
+                        'rgba(219,172,152, 1)',
+                        'rgba(210,153,133, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
+
+        var ctx = document.getElementById('myChart13').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Smooth', 'Soft', 'Hard', 'Firm', 'Dense'],
+                datasets: [{
+                    label: '# of Posts',
+                    data: [2313, 2525, 4352, 1445, 1234],
+                    backgroundColor: [
+                        'rgba(179,236,236, 0.2)',
+                        'rgba(137,236,218, 0.2)',
+                        'rgba(67,232,216, 0.2)',
+                        'rgba(64,224,208, 0.2)',
+                        'rgba(59,214,198, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(179,236,236, 1)',
+                        'rgba(137,236,218, 1)',
+                        'rgba(67,232,216, 1)',
+                        'rgba(64,224,208, 1)',
+                        'rgba(59,214,198, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
+
+        var ctx = document.getElementById('myChart14').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Temperature', 'Humidity', 'Wind', 'Light', 'Water'],
+                datasets: [{
+                    label: '# of Posts',
+                    data: [13260, 12978, 13745, 15512, 12793],
+                    backgroundColor: [
+                        'rgba(239,187,255, 0.2)',
+                        'rgba(216,150,255, 0.2)',
+                        'rgba(190,41,236, 0.2)',
+                        'rgba(128,0,128, 0.2)',
+                        'rgba(102,0,102, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(239,187,255, 1)',
+                        'rgba(216,150,255, 1)',
+                        'rgba(190,41,236, 1)',
+                        'rgba(128,0,128, 1)',
+                        'rgba(102,0,102, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
     }
 
     if ($('.user_management').length) {

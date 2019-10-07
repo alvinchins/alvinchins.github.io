@@ -1,6 +1,14 @@
 /*
 General
 */
+h2{
+    font-size: 1.2rem;
+}
+
+h4,h5{
+    font-size: 1rem;
+}
+
 header,footer{
     padding: 10px;
     width: 100%;
@@ -238,6 +246,31 @@ Sidebar
 }
 
 /*
+arDatas
+*/
+.arDatas{
+    padding: 10px;
+    width: 100%;
+}
+
+.arDatas h4{
+    color: white;
+}
+
+.arDatas p{
+    color: white;
+}
+
+.arDatas li p{
+    display: inline-block;
+}
+
+.arDatas li .counter{
+    float: right;
+    font-weight: bold;
+}
+
+/*
 arCharts
 */
 .section-fix{
@@ -256,8 +289,12 @@ arCharts
     padding: 10px;
 }
 
-.chart-container>h2{
+.chart-container>h2, .arDatas h5,.arDatas li{
     color: #818181;
+}
+
+.chart-container .sub-h{
+    color: #cccccc;
 }
 
 /*
