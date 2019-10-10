@@ -1,6 +1,11 @@
 /*
 General
 */
+ul>li>a[href='#']{
+    text-decoration: line-through;
+    color:#131122;
+}
+
 .empty_space{
     height: 16px;;
 }
