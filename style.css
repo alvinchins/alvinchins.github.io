@@ -37,12 +37,12 @@ body{
     background-color: white;
     position: fixed;
     z-index: 999;
-    margin-top: -64px;
+    height: 100vh;
 }
 
 .loader{
 	position: relative;
-	height: 100vh;
+	height: 100%;
 	overflow: hidden;
 }
 
@@ -116,19 +116,6 @@ body{
 }
 
 /*
-* Banner
-*/
-
-.banner{}
-
-/*
-* Content
-*/
-.content{
-    margin-top: 64px;
-}
-
-/*
 * Content - site display
 */
 #mySites{
@@ -148,6 +135,11 @@ body{
     border: 1px solid #ccc;
     box-shadow: 4px 4px #ccc;
     margin: 0 auto;
+}
+
+.browserText,.browserText:hover{
+    text-decoration: none;
+    color: black;
 }
 
 .titlebar{

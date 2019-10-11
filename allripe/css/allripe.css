@@ -400,7 +400,7 @@ Admin-User-Management
     float: right;
 }
 
-.tool-bar-left,.tool-bar-right{
+.tool-bar-left,.tool-bar-right,.system_state{
     margin-top: 10px;
 }
 
@@ -542,6 +542,18 @@ Admin-User-Management-Operations
 #action_remove{
     background-color: cornflowerblue;
     float: left;
+}
+
+.online,.active_number{
+    color:lightgreen;
+}
+
+.system_state{
+    color: white;
+}
+
+.system_state>h5{
+    font-size: 0.75rem;
 }
 
 /*
