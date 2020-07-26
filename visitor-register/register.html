@@ -63,7 +63,7 @@
 		var db = firebase.firestore();
 		// Add a new document in collection
 		db.collection("visitors").doc().set({
-		    name: visitor_info.name,
+		    full_name: visitor_info.name,
 		    contact: visitor_info.contact,
 		    date: visitor_info.date
 		})
