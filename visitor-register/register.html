@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add New Project</title>
+</head>
+<body>
+<div>
+	<form action="javascript:saveToFirebase()">
+		<label for="name">Enter Your Full Name</label><br>
+		<input type="text" name="name" placeholder="Your Name" required><br>
+		<label for="contact">Enter Contact Number</label><br>
+		<input type="tel" name="contact" placeholder="0432198765 etc." pattern="[0-9]{10}" required><br>
+		<button type="submit">Register</button>
+	</form>
+	<br><br>
+	<h4 id='state'>State</h4>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script>
+	// Initialize Firebase
+	var config = {
+	apiKey: "AIzaSyD6Brky5okB-6wZL9PY70BNrXcHsLtqm4I",
+	authDomain: "my-github-page-storage.firebaseapp.com",
+	databaseURL: "https://my-github-page-storage.firebaseio.com",
+	projectId: "my-github-page-storage",
+	storageBucket: "my-github-page-storage.appspot.com",
+	messagingSenderId: "554549258329"
+	};
+	firebase.initializeApp(config);
+
+	function saveToFirebase() {
+		document.getElementById("state").innerHTML = "Starting...";
+
+		// Set Timestamp
+		var today = new Date();
+		var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+		var time = today.getHours() + ":" + today.getMinutes();
+		var dateTime = date+' '+time;
+
+		// Validate inputs
+		var name = document.getElementsByName('name')[0].value;
+		var contact = document.getElementsByName('contact')[0].value;
+
+		if (name==null||name.trim()=='',contact==null||contact.trim()=='') {
+			alert('Name and contact number need to be filled!');
+			return;
+		}
+
+		var visitor_info = {
+			['name']:name,
+			['contact']:contact,
+			['date']:dateTime
+		};
+
+		console.log(visitor_info);
+
+	}
+
+	function updateDb(visitor_info) {
+		// Setup firebase db
+		var db = firebase.firestore();
+		// Add a new document in collection
+		db.collection("visitors").doc().set({
+		    name: visitor_info.name,
+		    contact: visitor_info.contact,
+		    date: visitor_info.date
+		})
+		.then(function() {
+		    console.log("Document successfully written!");
+		    document.getElementById("state").innerHTML = 'Job Done!';
+		})
+		.catch(function(error) {
+		    console.error("Error writing document: ", error);
+		});
+	}
+</script>
+</body>
+</html>
