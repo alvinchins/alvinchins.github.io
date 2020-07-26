@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="no-js no-svg">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Chilli Master Visitor List</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133582754-2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-133582754-2');
+	</script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<form id="login-form">
+		<input type="email" id="login-email" required>
+		<input type="password" id="login-password" required>
+		<button>Login</button>
+	</form>
+	<button id="logout">Logout</button>
+	<div id="visitor-list"></div>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	 https://firebase.google.com/docs/web/setup#available-libraries -->
+	 <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+	 <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+	<script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+		apiKey: "AIzaSyD6Brky5okB-6wZL9PY70BNrXcHsLtqm4I",
+		authDomain: "my-github-page-storage.firebaseapp.com",
+		databaseURL: "https://my-github-page-storage.firebaseio.com",
+		projectId: "my-github-page-storage",
+		appId: "1:554549258329:web:5365065548641f67a7a948"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+
+	// auth
+	const auth = firebase.auth();
+	const db = firebase.firestore();
+	</script>
+
+	<!-- Other Scripts-->
+	<script src="scripts/auth.js"></script>
+	<script src="scripts/index.js"></script>
+</body>
+</html>
