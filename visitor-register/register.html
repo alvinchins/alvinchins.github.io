@@ -1,38 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Add New Project</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Visitor Register</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133582754-2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-133582754-2');
+	</script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div>
-	<form action="javascript:saveToFirebase()">
-		<label for="name">Enter Your Full Name</label><br>
-		<input type="text" name="name" placeholder="Your Name" required><br>
-		<label for="contact">Enter Contact Number</label><br>
-		<input type="tel" name="contact" placeholder="0432198765 etc." pattern="[0-9]{10}" required><br>
-		<button type="submit">Register</button>
-	</form>
-	<br>
-	<h4 id='state'>State</h4>
+<div class="container">
+	<div class="row register-form-wrap">
+		<div class="col-sm-12">
+			<img src="imgs/Logo.png" alt="Chilli Master Logo">
+		</div>
+		<form  class="col-sm-12 register-form" class="" action="javascript:saveToFirebase()">
+			<label for="first_name">Enter First Name</label><br>
+			<input type="text" name="first_name" placeholder="First Name" required><br>
+			<label for="last_name">Enter Your Last Name</label><br>
+			<input type="text" name="last_name" placeholder="Last Name" required><br>
+			<label for="contact">Enter Contact Number</label><br>
+			<input type="tel" name="contact" placeholder="0432198765 etc." pattern="[0-9]{10}" required><br>
+			<button type="submit">Register</button>
+		</form>
+		<div class="col-sm-12 message-card">
+			<h1>All Done !</h1>
+			<h1>Thank You For Your Cooperation.</h1>
+		</div>
+	</div>
 </div>
 
 
-<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-<script>
-	// Initialize Firebase
-	var config = {
-	apiKey: "AIzaSyD6Brky5okB-6wZL9PY70BNrXcHsLtqm4I",
-	authDomain: "my-github-page-storage.firebaseapp.com",
-	databaseURL: "https://my-github-page-storage.firebaseio.com",
-	projectId: "my-github-page-storage",
-	storageBucket: "my-github-page-storage.appspot.com",
-	messagingSenderId: "554549258329"
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	 https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+	<script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+		apiKey: "AIzaSyD6Brky5okB-6wZL9PY70BNrXcHsLtqm4I",
+		authDomain: "my-github-page-storage.firebaseapp.com",
+		databaseURL: "https://my-github-page-storage.firebaseio.com",
+		projectId: "my-github-page-storage",
+		appId: "1:554549258329:web:5365065548641f67a7a948"
 	};
-	firebase.initializeApp(config);
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
 
 	function saveToFirebase() {
-		document.getElementById("state").innerHTML = "Starting...";
-
 		// Set Timestamp
 		var today = new Date();
 		var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
@@ -40,7 +67,8 @@
 		var dateTime = date+' '+time;
 
 		// Validate inputs
-		var name = document.getElementsByName('name')[0].value;
+		var first_name = document.getElementsByName('first_name')[0].value;
+		var last_name = document.getElementsByName('last_name')[0].value;
 		var contact = document.getElementsByName('contact')[0].value;
 
 		if (name==null||name.trim()=='',contact==null||contact.trim()=='') {
@@ -49,12 +77,12 @@
 		}
 
 		var visitor_info = {
-			['name']:name,
+			['first_name']:first_name,
+			['last_name']:last_name,
 			['contact']:contact,
 			['date']:dateTime
 		};
 
-		console.log(visitor_info);
 		updateDb(visitor_info);
 	}
 
@@ -63,18 +91,22 @@
 		var db = firebase.firestore();
 		// Add a new document in collection
 		db.collection("visitors").doc().set({
-		    full_name: visitor_info.name,
+			first_name: visitor_info.first_name,
+			last_name: visitor_info.last_name,
 		    contact: visitor_info.contact,
 		    date: visitor_info.date
 		})
 		.then(function() {
-		    console.log("Document successfully written!");
-		    document.getElementById("state").innerHTML = 'Job Done!';
+			document.querySelector('.register-form').style.display = "none";
+		    document.querySelector('.message-card').style.display = "block";
 		})
 		.catch(function(error) {
 		    console.error("Error writing document: ", error);
 		});
 	}
-</script>
+	</script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>

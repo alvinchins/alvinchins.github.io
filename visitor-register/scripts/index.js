@@ -8,7 +8,7 @@ const setupList = (data) => {
 			const visitor = doc.data();
 			const template = `
 				<div>
-					<p>${visitor.full_name} visited at ${visitor.date}.</p>
+					<p>${visitor.first_name} ${visitor.last_name} visited at ${visitor.date}.</p>
 					<p>Contact number: ${visitor.contact}</p>
 				</div>
 			`;
