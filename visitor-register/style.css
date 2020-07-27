@@ -29,6 +29,12 @@ body {
     margin-bottom: 10px;
 }
 
+.register-form-wrap img{
+    height: 220px;
+    width: 220px;
+    object-fit: cover;
+}
+
 button{
     border-radius: 5px;
     border-width: 0;
