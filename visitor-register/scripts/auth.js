@@ -4,7 +4,7 @@ auth.onAuthStateChanged(user => {
         document.getElementById("login-form").style.display = "none";
         document.getElementById("logout").style.display = "block";
         // get data
-        db.collection('visitors').get().then(snapshot => {
+        db.collection('visitors').orderBy("date", "desc").get().then(snapshot => {
             setupList(snapshot.docs);
         });
     }else{

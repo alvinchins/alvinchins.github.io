@@ -1,6 +1,7 @@
 body {
     background: linear-gradient(-45deg, #23a6d5, #0e0034);
     background-size: 400% 400%;
+    min-height: 100vh;
 }
 
 #logout{
@@ -16,7 +17,7 @@ body {
     font-size: 4rem;
 }
 
-.register-form-wrap{
+.register-form-wrap, .content{
     padding-top: 10%;
     text-align: center;
     color: white;
@@ -37,4 +38,25 @@ button{
     font-weight: bold;
     color: #ffffff;
     background-color: #b20000;
+}
+
+#visitor-list{
+    margin-top: 20px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.record-item{
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #13295c;
+}
+
+#visitor-list p{
+    margin-bottom: 0;
 }

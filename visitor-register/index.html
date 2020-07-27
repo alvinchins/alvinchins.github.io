@@ -18,13 +18,15 @@
 </head>
 <body>
 	<div class="container">
-		<form id="login-form">
-			<input type="email" id="login-email" required>
-			<input type="password" id="login-password" required>
-			<button>Login</button>
-		</form>
-		<button id="logout">Logout</button>
-		<div id="visitor-list"></div>
+		<div class="row content">
+			<form class="col-sm-12" id="login-form">
+				<input type="email" id="login-email" required>
+				<input type="password" id="login-password" required>
+				<button>Login</button>
+			</form>
+			<button class="col-sm-4 offset-sm-4 col-6 offset-3" id="logout">Logout</button>
+			<div class="col-sm-12" id="visitor-list"></div>
+		</div>
 	</div>
 
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
